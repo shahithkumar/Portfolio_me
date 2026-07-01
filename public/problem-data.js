@@ -111,7 +111,7 @@ export const PROBLEM_DETAILS = {
         video: {
             videoTitle: "JobFlow Walkthrough",
             videoDuration: "1:42",
-            videoUrl: "REAL 2.mp4",
+            videoUrl: "real-2.mp4",
             explanationPoints: [
                 { title: "One-Click Sync", text: "Directly import repositories, commits, and packages from GitHub to build a dynamic skill index." },
                 { title: "AI-Powered Matching", text: "Matches students not on buzzwords, but on code patterns, complexity, and active developer habits." },
@@ -1126,7 +1126,7 @@ Most productivity tools fight this by locking you out. But people don't want to 
         video: {
             videoTitle: "Intent Tube Demo",
             videoDuration: "1:02",
-            videoUrl: "REAL 2.mp4",
+            videoUrl: "real-2.mp4",
             explanationPoints: [
                 { title: "Feed Blocking", text: "Uses Chrome's MutationObserver API to intercept and strip home feed recommendation elements before they can render." },
                 { title: "Intent Memory", text: "Persists the user's intent locally inside Chrome Storage Sync. Only allows searches matching semantic goal scopes." },
