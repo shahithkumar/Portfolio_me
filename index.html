@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahith Kumar - Problem Solver & Builder</title>
+    <meta name="description" content="Personal portfolio of Shahith Kumar, a problem solver and builder creating simple solutions for real-world problems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">SK<span class="logo-dot">.</span></span>
+        </div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active" id="nav-home">Home</a>
+            <a href="#problems" class="nav-link" id="nav-problems">Problems</a>
+            <a href="#about" class="nav-link" id="nav-about">About</a>
+        </nav>
+        <button class="btn btn-primary btn-contact" id="contact-me-btn">
+            Contact Me 
+            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Left Column: Profile Card -->
+        <section class="profile-section" id="home">
+            <div class="avatar-container">
+                <div class="avatar-wrapper">
+                    <img src="assets/avatar.png" alt="Shahith Kumar" class="avatar-img">
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <h1 class="profile-name">Shahith Kumar</h1>
+                
+
+
+                <div class="bio-section">
+                    <p class="bio-hook">"I spent years reading books, watching tutorials, and waiting for the 'perfect' idea. I got tired of consuming. Now, I build."</p>
+                    <p class="bio-mission"><strong>Mission:</strong> Solve one real-world problem every 7 days and ship the solution live.</p>
+                    <p class="bio-description">
+                        No permission needed. No hiding behind perfectionism. Just relentless, consistent execution. Join below to track my weekly builds, raw metrics, and lessons from the pivots.
+                    </p>
+                </div>
+
+                <!-- Newsletter Form (Inline) -->
+                <div class="newsletter-inline" id="newsletter-section">
+                    <form class="newsletter-form-inline" id="newsletter-form">
+                        <input type="email" class="newsletter-input-inline" required placeholder="Your email..." aria-label="Email address">
+                        <button type="submit" class="btn btn-primary newsletter-btn-inline">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Horizontal Checklist Progress Tracker -->
+                <div class="sidebar-widget-minimal">
+                    <div class="widget-title-minimal">
+                        <span>🔥 Progress (Week 1):</span>
+                    </div>
+                    <div class="horizontal-progress">
+                        <div class="progress-step done" title="Day 1 Problem">
+                            <span class="progress-check">✔</span>
+                            <span class="step-text">D1</span>
+                        </div>
+                        <div class="progress-step done" title="Day 2 Research">
+                            <span class="progress-check">✔</span>
+                            <span class="step-text">D2</span>
+                        </div>
+                        <div class="progress-step done" title="Day 3 Plan">
+                            <span class="progress-check">✔</span>
+                            <span class="step-text">D3</span>
+                        </div>
+                        <div class="progress-step active" title="Day 4 Build (Active)">
+                            <span class="progress-check">●</span>
+                            <span class="step-text">D4</span>
+                        </div>
+                        <div class="progress-step pending" title="Day 5 Improve">
+                            <span class="progress-check">○</span>
+                            <span class="step-text">D5</span>
+                        </div>
+                        <div class="progress-step pending" title="Day 6 Prepare">
+                            <span class="progress-check">○</span>
+                            <span class="step-text">D6</span>
+                        </div>
+                        <div class="progress-step pending" title="Day 7 Launch">
+                            <span class="progress-check">○</span>
+                            <span class="step-text">D7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Me & Now Details Section -->
+                <div class="about-now-section">
+                    <h3 class="about-now-title">Currently ("Now")</h3>
+                    <div class="currently-building-widget">
+                        <div class="currently-building-header">
+                            <span class="pulse-dot-green"></span>
+                            <span class="currently-building-label">BUILDING THIS NOW</span>
+                        </div>
+                        <h4 class="currently-building-title">YouTube Focus</h4>
+                        <p class="currently-building-desc">A Chrome Extension that intercepts visits to YouTube, helping you stay focused by hiding recommendations.</p>
+                        <div class="currently-building-meta">
+                            <span>Week 1 Build</span>
+                            <span class="meta-dot">•</span>
+                            <a href="problem.html?id=7" class="currently-building-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:shahi@example.com" aria-label="Email" class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <footer class="footer-left">
+                <span class="footer-text">© 2026 Shahith Kumar. <span class="footer-sparkle">+</span></span>
+            </footer>
+        </section>
+
+        <!-- Right Column: Documentary Hub & Projects Grid -->
+        <section class="problems-section" id="problems">
+
+
+            <!-- Header -->
+            <div class="problems-header" style="margin-top: 1.5rem;">
+                <div class="badge-title">
+                    <span class="badge-dot"></span>
+                    CHALLENGE SHIPS & ACTIVE BUILDS
+                </div>
+                <a href="#problems" class="view-all-link">
+                    View all builds
+                    <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="problems-grid">
+                <!-- Card 7: YouTube Focus (Active) -->
+                <a href="problem.html?id=7" class="problem-card-link">
+                    <article class="problem-card theme-red" data-problem-id="7">
+                        <div class="card-bg-dots"></div>
+                        <div class="card-glow-effect"></div>
+                        <span class="card-status-badge building">
+                            <span class="pulse-dot-green"></span> Building
+                        </span>
+                        <div class="card-menu-tag">
+                            <span class="menu-icon-bars"></span>
+                            WEEK 01
+                        </div>
+                        <div class="card-center-content">
+                            <div class="card-logo-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="card-product-name">YouTube Focus</h3>
+                            <p class="card-product-tagline">Chrome Extension</p>
+                            <div class="card-reddit-quote">
+                                "How do I stop wasting time on YouTube?"
+                            </div>
+                            <div class="card-tech-tags">
+                                <span class="card-tech-tag">Chrome API</span>
+                                <span class="card-tech-tag">React</span>
+                                <span class="card-tech-tag">CSS</span>
+                            </div>
+                        </div>
+                        <div class="card-presented-by">Day 4/7 • Click to follow →</div>
+                        <div class="card-website-url">youtube-focus.dev</div>
+                        <div class="card-version-label">In Progress</div>
+                        <div class="card-right-sidebar">
+                            <div class="card-search-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                            <div class="card-sidebar-dashed-line"></div>
+                            <div class="card-sidebar-text">CLICK TO FOLLOW</div>
+                            <div class="card-mouse-icon">
+                                <div class="card-mouse-wheel"></div>
+                            </div>
+                            <div class="card-sidebar-solid-line"></div>
+                        </div>
+                    </article>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Theme Toggle Floating Button -->
+    <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark/light theme">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <div class="modal-badge-container">
+                    <div class="modal-icon-box" id="modal-project-icon">
+                        <!-- Dynamic Icon -->
+                    </div>
+                    <span class="modal-project-year" id="modal-project-year">2026</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-project-title" id="modal-project-title">Project Title</h2>
+                
+                <h3 class="section-subtitle">The Problem</h3>
+                <p class="modal-project-problem" id="modal-project-problem">Details about the problem being solved...</p>
+
+                <h3 class="section-subtitle">The Solution</h3>
+                <p class="modal-project-solution" id="modal-project-solution">Details about the built solution...</p>
+
+                <h3 class="section-subtitle">Tech Stack</h3>
+                <div class="tech-tags" id="modal-project-tech">
+                    <!-- Dynamic Tech Tags -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="modal-project-link" target="_blank">
+                    View Project Live
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="contact-close-btn" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body">
+                <h2 class="modal-title">Let's Connect</h2>
+                <p class="modal-subtitle">Have a problem that needs solving? Drop me a message and let's build something together.</p>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="4" required placeholder="What are you working on?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Send Message
+                        <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+                <div class="contact-success-msg" id="contact-success-msg" style="display: none;">
+                    <div class="success-icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

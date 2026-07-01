@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Detail - Shahith Kumar</title>
+    <meta name="description" content="Detailed breakdown of a problem solved by Shahith Kumar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="problem.css">
+</head>
+<body class="problem-page">
+
+    <!-- Vercel-like Header -->
+    <header class="v-header">
+        <div class="v-header-inner">
+            <div class="v-brand-box">
+                <a href="index.html" class="v-logo">
+                    <span class="logo-text">SK<span class="logo-dot">.</span></span>
+                </a>
+                <span class="v-slash">/</span>
+                <span class="v-project-name" id="header-project-name">JobFlow</span>
+            </div>
+            <nav class="v-nav">
+                <div class="v-nav-capsule" id="nav-capsule"></div>
+                <a href="#overview" class="v-nav-link active" id="lnk-overview">Overview</a>
+                <a href="#meme" class="v-nav-link" id="lnk-meme">Meme</a>
+                <a href="#story" class="v-nav-link" id="lnk-story">Story</a>
+                <a href="#demo" class="v-nav-link" id="lnk-demo">Demo</a>
+                <a href="#features" class="v-nav-link" id="lnk-features">Features</a>
+                <a href="#system" class="v-nav-link" id="lnk-system">System Design</a>
+            </nav>
+            <div class="v-actions">
+                <a href="index.html" class="v-btn-home">← Back</a>
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark/light theme" style="position: static; width: 2.25rem; height: 2.25rem; box-shadow: none;">
+                    <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="p-container">
+
+        <!-- Hero Section -->
+        <section class="p-hero" id="overview">
+            <div class="live-pulse">
+                <span class="live-pulse-dot"></span>
+                <span>Active Solution</span>
+            </div>
+            <div class="p-hero-category" id="hero-category">PRODUCT TYPE</div>
+            <h1 class="p-hero-title"><span id="hero-title-first">How can students</span> <span class="grad" id="hero-title-highlight">find jobs faster?</span></h1>
+            <p class="p-hero-tagline" id="hero-tagline-container">
+                <span id="hero-tagline-text"></span><span class="tagline-cursor">|</span>
+            </p>
+            <p class="p-hero-author">by <strong>Shahith Kumar</strong></p>
+            <div class="p-hero-links">
+                <a href="#" class="p-btn-action" id="hero-cta-link" target="_blank">
+                    View Live Project
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Meme Section -->
+        <section class="meme-section" id="meme">
+            <div class="p-section-header">
+                <span class="p-section-badge">HUMOR & REALITY</span>
+                <h2 class="p-section-title">The Current State vs Our Solution</h2>
+            </div>
+            
+            <div class="meme-card">
+                <div class="meme-header">
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <span class="meme-emoji">🎭</span>
+                        <h3 id="meme-title">The Application Vortex</h3>
+                    </div>
+                </div>
+
+                <!-- View 2: Funny Meme Card (Always visible) -->
+                <div class="meme-fun-view" id="meme-fun-container">
+                    <div class="fun-meme-image-wrapper">
+                        <div class="fun-meme-glow"></div>
+                        <div class="fun-meme-face">🤪</div>
+                        <p class="fun-meme-quote" id="fun-meme-text">"Devs will literally write a 400-line WebSocket broker with custom data flow animations instead of just using email."</p>
+                        <img id="fun-meme-gif" src="" alt="Meme GIF" style="display: none; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid var(--border-card);">
+                        <div class="fun-meme-bar">
+                            <span class="badge red" id="fun-meme-left-badge">Traditional Route</span>
+                            <span class="badge green" id="fun-meme-right-badge">Product Route</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story & Relevance Section -->
+        <section class="story-section" id="story">
+            <div class="split-grid">
+                <!-- Left: Origin story with interactive timeline -->
+                <div class="narrative-box premium-card" id="story-card">
+                    <div class="card-accent-line"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-header-wrapper">
+                        <span class="p-section-badge">ORIGIN STORY</span>
+                        <div class="title-with-icon">
+                            <span class="title-icon">💡</span>
+                            <h3>How did I get the idea?</h3>
+                        </div>
+                    </div>
+                    <!-- Dynamic Timeline Navigation -->
+                    <div class="story-timeline-nav" id="story-timeline-nav">
+                        <!-- Injected via JS -->
+                    </div>
+                    <div class="story-timeline-content-wrapper">
+                        <p class="narrative-text" id="story-text">
+                            Loading story...
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right: Market relevance & SVG Radial Stats -->
+                <div class="relevance-box premium-card" id="relevance-card">
+                    <div class="card-accent-line"></div>
+                    <div class="card-glow-effect"></div>
+                    <div class="card-header-wrapper">
+                        <span class="p-section-badge">MARKET NEED</span>
+                        <div class="title-with-icon">
+                            <span class="title-icon">🎯</span>
+                            <h3 id="relevance-title">Is this problem relevant?</h3>
+                        </div>
+                    </div>
+                    <p id="relevance-text">
+                        Loading relevance details...
+                    </p>
+                    <div class="stat-radial-group" id="relevance-stats">
+                        <!-- JS Dynamic SVG Radial Dials -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Real Website Usage Showcase (Fullscreen Scroll-driven Showcase) -->
+    <section class="usage-section-outer" id="demo">
+        <div class="usage-sticky-box">
+            <!-- Fullscreen Browser Viewport (Mockup borders removed) -->
+            <div class="browser-body" id="browser-body">
+                <div class="manual-mode-badge" id="manual-mode-badge" style="z-index: 1000; top: 1.5rem; right: 1.5rem;">
+                    🖱️ Scroll page to drive interaction
+                </div>
+                <div class="browser-scroll-container" id="browser-scroll-container">
+                    <!-- Dynamic content injected here -->
+                </div>
+            </div>
+
+            <!-- Apple-Style Solid Caption Pill -->
+            <div class="usage-apple-caption" id="usage-apple-caption">
+                <span class="ua-badge">IntentTube Demo</span>
+                <div class="ua-step">STEP 01</div>
+                <h3 class="ua-title">Loading...</h3>
+                <p class="ua-desc">Loading description...</p>
+            </div>
+        </div>
+
+        <!-- Scroll Snap Anchors for 3-Scroll Phases -->
+        <div class="usage-snap-trigger" style="margin-top: -100vh;"></div>
+        <div class="usage-snap-trigger"></div>
+        <div class="usage-snap-trigger"></div>
+    </section>
+
+    <main class="p-container">
+
+        <!-- Video & Features Breakdown -->
+        <section class="video-section">
+            <div class="p-section-header" style="margin-bottom: 2.5rem;">
+                <span class="p-section-badge">VIDEO TOUR</span>
+                <h2 class="p-section-title">Walkthrough & Technical Details</h2>
+            </div>
+            
+            <div class="video-grid">
+                <!-- Left: Interactive Video Player Mockup -->
+                <div class="video-container">
+                    <div class="video-thumbnail" id="video-thumbnail">
+                        <div class="video-overlay-glow"></div>
+                        <button class="video-play-btn" id="video-play-btn" aria-label="Play Walkthrough Video">
+                            <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Custom playback progress controls -->
+                    <div class="video-playback-controls">
+                        <span class="video-time-elapsed">0:00</span>
+                        <div class="video-progress-bar-wrapper">
+                            <div class="video-progress-fill" id="video-progress-fill"></div>
+                        </div>
+                        <span id="video-duration">1:30</span>
+                    </div>
+                </div>
+
+                <!-- Right: Explanations -->
+                <div class="exp-list" id="video-expl-list">
+                    <!-- JS Injected highlights -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Annotated Mockup Workspace -->
+        <section class="features-section" id="features">
+            <div class="p-section-header">
+                <span class="p-section-badge">CORE CAPABILITIES</span>
+                <h2 class="p-section-title">Annotated Features</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Click on the pulsing targets to inspect how it works under the hood.</p>
+            </div>
+
+            <div class="annotation-box">
+                <!-- Left: Workspace Mockup containing hotspot buttons -->
+                <div class="mockup-container" id="annotation-mockup-frame">
+                    <!-- Dynamic HTML Mockup injected -->
+                    <div class="hotspots-overlay" id="hotspots-overlay">
+                        <!-- Dynamic Hotspots placed here -->
+                    </div>
+                </div>
+
+                <!-- Right: Details Card -->
+                <div class="annotation-desc-card" id="annotation-detail-card">
+                    <h4 id="anno-title">Interactive Inspector</h4>
+                    <p id="anno-desc">Select an annotated item on the interface mockup to read details about the technical execution and feature workflow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Design Diagram (Animated) -->
+        <section class="system-section" id="system">
+            <div class="p-section-header">
+                <span class="p-section-badge">INFRASTRUCTURE</span>
+                <h2 class="p-section-title">Animated System Architecture</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Interactive SVG design. Click components to analyze tech choice rationale.</p>
+            </div>
+
+            <div class="sys-design-section">
+                <div class="sys-canvas-wrapper">
+                    <!-- Left: Interactive Canvas -->
+                    <div class="sys-canvas-container">
+                        <svg class="sys-canvas" id="sys-svg" viewBox="0 0 820 400" width="100%" height="100%">
+                            <!-- Dynamic SVG nodes and edges injected -->
+                        </svg>
+                    </div>
+
+                    <!-- Right: Node Explanation panel + Logs Console -->
+                    <div class="sys-sidebar">
+                        <span class="sys-node-tag" id="sys-sidebar-tag">ARCHITECTURE</span>
+                        <h4 id="sys-sidebar-title">Infrastructure Overview</h4>
+                        <p class="sys-node-desc" id="sys-sidebar-desc">
+                            Select any system component block in the diagram (e.g. database, caching server, local client) to inspect its technical details, technology stack justification, and load profiles.
+                        </p>
+                        
+                        <!-- Simulated Live Terminal Logger -->
+                        <div class="sys-terminal-wrapper">
+                            <div class="sys-terminal-header">
+                                <span class="term-dot red"></span>
+                                <span class="term-dot yellow"></span>
+                                <span class="term-dot green"></span>
+                                <span class="term-title">system_logs.sh</span>
+                            </div>
+                            <div class="sys-terminal-console" id="sys-terminal-console">
+                                <p class="sys-terminal-row" style="color: #6e7681;">Select an infrastructure node to print stream logs...</p>
+                            </div>
+                        </div>
+
+                        <div class="sys-sidebar-tip">
+                            💡 Dashed lines represent active network traffic. Glowing flows show live user transaction cycles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Call To Action -->
+        <section class="footer-cta">
+            <h3>Interested in building something similar?</h3>
+            <p>Let's collaborate on solving real-world challenges with elegant code.</p>
+            <a href="index.html#home" class="btn btn-primary" id="footer-connect-btn">Get In Touch</a>
+        </section>
+
+    </main>
+
+    <script src="problem-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme Loader & Sync
+            const themeToggleBtn = document.getElementById("theme-toggle-btn");
+            const sunIcon = themeToggleBtn.querySelector(".sun-icon");
+            const moonIcon = themeToggleBtn.querySelector(".moon-icon");
+            const htmlElement = document.documentElement;
+
+            const savedTheme = localStorage.getItem("theme") || "light";
+            htmlElement.setAttribute("data-theme", savedTheme);
+            updateThemeIcons(savedTheme);
+
+            themeToggleBtn.addEventListener("click", () => {
+                const currentTheme = htmlElement.getAttribute("data-theme");
+                const newTheme = currentTheme === "light" ? "dark" : "light";
+                htmlElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+                updateThemeIcons(newTheme);
+            });
+
+            function updateThemeIcons(theme) {
+                if (theme === "dark") {
+                    sunIcon.style.display = "none";
+                    moonIcon.style.display = "block";
+                } else {
+                    sunIcon.style.display = "block";
+                    moonIcon.style.display = "none";
+                }
+            }
+
+            // Read ID from Query String
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get("id") || "1";
+            const data = PROBLEM_DETAILS[projectId];
+
+            // If invalid project, redirect back to home
+            if (!data) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            document.documentElement.style.setProperty('--theme-primary', `var(--box-${data.theme}-fg)`);
+            document.documentElement.style.setProperty('--theme-bg', `var(--box-${data.theme}-bg)`);
+            
+            // Map RGB equivalent for shadows
+            const rgbValues = {
+                gold: "217, 119, 6",
+                purple: "124, 58, 237",
+                green: "22, 163, 74",
+                pink: "219, 39, 119",
+                blue: "37, 99, 235",
+                orange: "234, 88, 12",
+                red: "239, 68, 68"
+            };
+            document.documentElement.style.setProperty('--theme-primary-rgb', rgbValues[data.theme] || "15, 15, 17");
+
+            // Brand header breadcrumb
+            document.getElementById("header-project-name").textContent = data.productName;
+
+            // Vercel Link Capsule Tracker
+            const navContainer = document.querySelector(".v-nav");
+            const navCapsule = document.getElementById("nav-capsule");
+            const navLinksList = document.querySelectorAll(".v-nav-link");
+
+            function moveCapsuleTo(targetLink) {
+                if (!targetLink) {
+                    navCapsule.style.opacity = "0";
+                    return;
+                }
+                const linkRect = targetLink.getBoundingClientRect();
+                const containerRect = navContainer.getBoundingClientRect();
+                
+                navCapsule.style.width = `${linkRect.width}px`;
+                navCapsule.style.left = `${linkRect.left - containerRect.left}px`;
+                navCapsule.style.opacity = "1";
+            }
+
+            // Sync capsule with currently active link
+            const activeLink = navContainer.querySelector(".v-nav-link.active");
+            if (activeLink) {
+                setTimeout(() => moveCapsuleTo(activeLink), 150);
+            }
+
+            navLinksList.forEach(link => {
+                link.addEventListener("mouseenter", () => moveCapsuleTo(link));
+            });
+            navContainer.addEventListener("mouseleave", () => {
+                const currentActive = navContainer.querySelector(".v-nav-link.active");
+                moveCapsuleTo(currentActive);
+            });
+
+            // Populate Text Fields
+            document.title = `${data.productName} - Problem Solver Showcase`;
+            document.getElementById("hero-category").textContent = `PROBLEM #${data.id} • ${data.productName}`;
+            
+            // Split Title
+            const titleWords = data.title.split(" ");
+            const lastWord = titleWords.pop();
+            const restTitle = titleWords.join(" ");
+            document.getElementById("hero-title-first").textContent = restTitle + " ";
+            document.getElementById("hero-title-highlight").textContent = lastWord;
+            document.getElementById("hero-cta-link").href = data.link;
+
+            // Typewriter Tagline
+            const taglineTextEl = document.getElementById("hero-tagline-text");
+            const taglineStr = data.tagline;
+            let charIndex = 0;
+            taglineTextEl.textContent = "";
+
+            function typeTagline() {
+                if (charIndex < taglineStr.length) {
+                    taglineTextEl.textContent += taglineStr.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeTagline, 15 + Math.random() * 15);
+                }
+            }
+            setTimeout(typeTagline, 400);
+
+            // Populate Meme view elements
+            document.getElementById("meme-title").textContent = data.meme.title;
+            // Populate fun meme text or GIF
+            const memeText = document.getElementById("fun-meme-text");
+            const memeFace = document.querySelector(".fun-meme-face");
+            const memeBar = document.querySelector(".fun-meme-bar");
+            const memeGif = document.getElementById("fun-meme-gif");
+
+            if (data.meme.gif) {
+                if (memeGif) {
+                    memeGif.src = data.meme.gif;
+                    memeGif.style.display = "block";
+                }
+                if (memeText) memeText.style.display = "none";
+                if (memeFace) memeFace.style.display = "none";
+                if (memeBar) memeBar.style.display = "none";
+            } else {
+                if (memeGif) memeGif.style.display = "none";
+                if (memeText) {
+                    memeText.textContent = `"${data.meme.caption}"`;
+                    memeText.style.display = "block";
+                }
+                if (memeFace) {
+                    memeFace.style.display = "block";
+                }
+                if (memeBar) {
+                    memeBar.style.display = "flex";
+                    document.getElementById("fun-meme-left-badge").textContent = `Traditional: ${data.meme.leftItems[0]}`;
+                    document.getElementById("fun-meme-right-badge").textContent = `Product: ${data.meme.rightItems[0]}`;
+                }
+            }
+
+            // Generate timeline milestones dynamically
+            let milestones = [];
+            if (data.origin.milestones) {
+                milestones = data.origin.milestones;
+            } else {
+                // Auto-generate milestones from paragraphs or sentences
+                const paragraphs = data.origin.story.split("\n\n").filter(p => p.trim().length > 0);
+                if (paragraphs.length >= 2) {
+                    const titles = ["The Spark", "The Insight", "The Shift", "The Build"];
+                    milestones = paragraphs.map((p, idx) => ({
+                        title: titles[idx] || `Phase 0${idx + 1}`,
+                        text: p
+                    }));
+                } else {
+                    // Split by sentences if only one paragraph
+                    const sentences = data.origin.story.split(". ").filter(s => s.trim().length > 0);
+                    if (sentences.length >= 3) {
+                        milestones = [
+                            { title: "The Spark", text: sentences[0] + "." },
+                            { title: "The Insight", text: sentences[1] + "." },
+                            { title: "The Build", text: sentences.slice(2).join(". ") + (sentences.slice(2).join(". ").endsWith(".") ? "" : ".") }
+                        ];
+                    } else {
+                        milestones = [
+                            { title: "The Idea", text: data.origin.story }
+                        ];
+                    }
+                }
+            }
+
+            // Populate Timeline Navigation
+            const timelineNav = document.getElementById("story-timeline-nav");
+            const storyText = document.getElementById("story-text");
+            timelineNav.innerHTML = "";
+
+            if (milestones.length > 1) {
+                timelineNav.style.display = "flex";
+                milestones.forEach((m, idx) => {
+                    const btn = document.createElement("button");
+                    btn.className = `timeline-btn ${idx === 0 ? 'active' : ''}`;
+                    btn.innerHTML = `
+                        <span class="timeline-btn-dot"></span>
+                        <span class="timeline-btn-title">${m.title}</span>
+                    `;
+                    btn.addEventListener("click", () => {
+                        // Highlight button
+                        timelineNav.querySelectorAll(".timeline-btn").forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+
+                        // Transition text content smoothly
+                        storyText.style.opacity = "0";
+                        storyText.style.transform = "translateY(10px)";
+                        setTimeout(() => {
+                            storyText.textContent = m.text;
+                            storyText.style.opacity = "1";
+                            storyText.style.transform = "translateY(0)";
+                        }, 200);
+                    });
+                    timelineNav.appendChild(btn);
+                });
+                // Initialize with first milestone text
+                storyText.textContent = milestones[0].text;
+            } else {
+                timelineNav.style.display = "none";
+                storyText.textContent = data.origin.story;
+            }
+
+            document.getElementById("relevance-title").textContent = data.origin.relevanceTitle;
+            document.getElementById("relevance-text").textContent = data.origin.relevanceText;
+
+            // Populate Radial Stats Dials
+            const statsContainer = document.getElementById("relevance-stats");
+            statsContainer.innerHTML = "";
+            if (data.origin.stats && data.origin.stats.length > 0) {
+                statsContainer.style.display = "grid";
+                data.origin.stats.forEach(stat => {
+                    const item = document.createElement("div");
+                    item.className = "stat-radial-item";
+                    item.innerHTML = `
+                        <div class="stat-radial-dial">
+                            <svg width="80" height="80" viewBox="0 0 80 80">
+                                <circle class="dial-bg" cx="40" cy="40" r="34" stroke="var(--border-card)" stroke-width="5" fill="transparent" />
+                                <circle class="dial-fill" cx="40" cy="40" r="34" stroke="var(--theme-primary)" stroke-width="5" fill="transparent" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6" data-percentage="${stat.percentage}" />
+                            </svg>
+                            <span class="dial-value">${stat.value}</span>
+                        </div>
+                        <span class="dial-label">${stat.label}</span>
+                    `;
+                    statsContainer.appendChild(item);
+                });
+            } else {
+                statsContainer.style.display = "none";
+            }
+
+            // Animate radial dial fills using IntersectionObserver
+            const statSection = document.querySelector(".relevance-box");
+            if (statSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const fills = entry.target.querySelectorAll(".dial-fill");
+                            fills.forEach(fill => {
+                                const pct = parseFloat(fill.getAttribute("data-percentage"));
+                                const circumference = 213.6;
+                                const offset = circumference - (circumference * pct) / 100;
+                                fill.style.strokeDashoffset = offset;
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(statSection);
+            }
+
+            // Populate Website Usage Mockup Pages
+            const addressEl = document.getElementById("browser-address");
+            if (addressEl) {
+                addressEl.textContent = data.usage.browserTitle;
+            }
+            const scrollContainer = document.getElementById("browser-scroll-container");
+            scrollContainer.innerHTML = "";
+            data.usage.pages.forEach(pg => {
+                const wrapper = document.createElement("div");
+                wrapper.className = "uf-page-wrapper";
+                wrapper.innerHTML = pg.contentHtml;
+                scrollContainer.appendChild(wrapper);
+            });
+
+            // Populate Apple-Style Capsule Card Initial State
+            const appleCaption = document.getElementById("usage-apple-caption");
+            if (appleCaption && data.usage.pages.length > 0) {
+                const firstPage = data.usage.pages[0];
+                appleCaption.querySelector(".ua-step").textContent = "STEP 01";
+                appleCaption.querySelector(".ua-title").textContent = firstPage.title;
+                appleCaption.querySelector(".ua-desc").textContent = firstPage.description || "";
+            }
+
+            // Scroll-Driven Interactive Mockup logic
+            const demoSection = document.getElementById("demo");
+            const browserScroll = document.getElementById("browser-scroll-container");
+            
+            function handleScrollDrivenDemo() {
+                if (!demoSection || !browserScroll || isHovered) return;
+                
+                const rect = demoSection.getBoundingClientRect();
+                const totalHeight = demoSection.clientHeight;
+                
+                // Calculate progress: 0 when top of demo section enters viewport, 1 when bottom leaves viewport
+                const startScroll = demoSection.offsetTop;
+                const scrollRange = totalHeight - window.innerHeight;
+                if (scrollRange <= 0) return;
+                
+                let progress = (window.scrollY - startScroll) / scrollRange;
+                progress = Math.max(0, Math.min(1, progress));
+                
+                const numPages = data.usage.pages.length;
+                const activeIndex = Math.min(numPages - 1, Math.floor(progress * numPages));
+                
+                // Scroll internal browser viewport page by page
+                const bodyHeight = browserScroll.parentElement.clientHeight || 412;
+                const scrollY = bodyHeight * activeIndex;
+                browserScroll.style.transform = `translateY(-${scrollY}px)`;
+
+                // Address Bar Update (only if it exists)
+                const currentPg = data.usage.pages[activeIndex];
+                if (currentPg) {
+                    const addressEl = document.getElementById("browser-address");
+                    if (addressEl) {
+                        addressEl.textContent = currentPg.url;
+                    }
+                }
+
+                // Update Apple-Style Capsule Card dynamically with animation
+                if (appleCaption && currentPg) {
+                    const stepEl = appleCaption.querySelector(".ua-step");
+                    const titleEl = appleCaption.querySelector(".ua-title");
+                    const descEl = appleCaption.querySelector(".ua-desc");
+                    
+                    const nextStepText = `STEP 0${activeIndex + 1}`;
+                    if (stepEl.textContent !== nextStepText) {
+                        appleCaption.classList.add("transitioning");
+                        
+                        setTimeout(() => {
+                            stepEl.textContent = nextStepText;
+                            titleEl.textContent = currentPg.title;
+                            descEl.textContent = currentPg.description || "";
+                            appleCaption.classList.remove("transitioning");
+                        }, 150);
+                    }
+                }
+
+                // Chat bubble cascade in chat views
+                const chatBox = browserScroll.querySelector(".uf-chat-box");
+                if (chatBox) {
+                    const msgs = chatBox.querySelectorAll(".uf-msg");
+                    msgs.forEach((msg, idx) => {
+                        // Cascade bubbles dynamically based on progress
+                        const msgThreshold = 0.5 + (idx * 0.15);
+                        if (progress > msgThreshold) {
+                            msg.classList.add("visible");
+                        } else {
+                            msg.classList.remove("visible");
+                        }
+                    });
+                }
+            }
+
+            // Manual use mode toggle on hover
+            const browserBody = document.getElementById("browser-body");
+            const manualBadge = document.getElementById("manual-mode-badge");
+            let isHovered = false;
+
+            browserBody.addEventListener("mouseenter", () => {
+                isHovered = true;
+                manualBadge.textContent = "🖱️ Scroll inside to interact manually";
+                browserBody.style.overflowY = "auto";
+                window.removeEventListener("scroll", handleScrollDrivenDemo);
+            });
+
+            browserBody.addEventListener("mouseleave", () => {
+                isHovered = false;
+                manualBadge.textContent = "🖱️ Scroll page to drive interaction";
+                browserBody.style.overflowY = "hidden";
+                window.addEventListener("scroll", handleScrollDrivenDemo);
+                handleScrollDrivenDemo();
+            });
+
+            window.addEventListener("scroll", handleScrollDrivenDemo);
+            window.addEventListener("resize", handleScrollDrivenDemo);
+
+            // Populate Video Highlights
+            document.getElementById("video-duration").textContent = data.video.videoDuration;
+            
+            const videoExplList = document.getElementById("video-expl-list");
+            videoExplList.innerHTML = "";
+            data.video.explanationPoints.forEach((point, i) => {
+                const item = document.createElement("div");
+                item.className = `exp-item ${i === 0 ? 'active' : ''}`;
+                item.innerHTML = `
+                    <div class="exp-num">${i + 1}</div>
+                    <div class="exp-content">
+                        <h4>${point.title}</h4>
+                        <p>${point.text}</p>
+                    </div>
+                `;
+                videoExplList.appendChild(item);
+            });
+
+            // Video Playback Simulation
+            const videoPlayBtn = document.getElementById("video-play-btn");
+            const videoThumbnail = document.getElementById("video-thumbnail");
+            const videoProgressFill = document.getElementById("video-progress-fill");
+            const videoTimeElapsed = document.querySelector(".video-time-elapsed");
+            
+            let isPlaying = false;
+            let playbackInterval = null;
+            let elapsedPercent = 0;
+            const simulatedDurationSeconds = 12; // 12s walkthrough simulation
+            
+            videoPlayBtn.addEventListener("click", toggleVideoPlayback);
+            videoThumbnail.addEventListener("click", (e) => {
+                if (e.target !== videoPlayBtn && !videoPlayBtn.contains(e.target)) {
+                    toggleVideoPlayback();
+                }
+            });
+            
+            function toggleVideoPlayback() {
+                if (isPlaying) {
+                    isPlaying = false;
+                    clearInterval(playbackInterval);
+                    videoPlayBtn.innerHTML = `<svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>`;
+                } else {
+                    isPlaying = true;
+                    videoPlayBtn.innerHTML = `<svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>`;
+                    
+                    playbackInterval = setInterval(() => {
+                        elapsedPercent += (100 / (simulatedDurationSeconds * 10)); // increment every 100ms
+                        if (elapsedPercent >= 100) {
+                            elapsedPercent = 0;
+                            isPlaying = false;
+                            clearInterval(playbackInterval);
+                            videoPlayBtn.innerHTML = `<svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>`;
+                        }
+                        
+                        videoProgressFill.style.width = `${elapsedPercent}%`;
+                        
+                        const totalSeconds = parseFloat(data.video.videoDuration.split(":")[0]) * 60 + parseFloat(data.video.videoDuration.split(":")[1]);
+                        const currentSeconds = Math.floor(totalSeconds * (elapsedPercent / 100));
+                        const m = Math.floor(currentSeconds / 60);
+                        const s = currentSeconds % 60;
+                        videoTimeElapsed.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+                        
+                        // Highlight corresponding explanation items
+                        const items = document.querySelectorAll(".exp-item");
+                        let activeIndex = 0;
+                        if (elapsedPercent > 33 && elapsedPercent <= 66) {
+                            activeIndex = 1;
+                        } else if (elapsedPercent > 66) {
+                            activeIndex = 2;
+                        }
+                        
+                        items.forEach((item, idx) => {
+                            if (idx === activeIndex) {
+                                item.classList.add("active");
+                            } else {
+                                item.classList.remove("active");
+                            }
+                        });
+                    }, 100);
+                }
+            }
+
+            // Populate Annotated Mockup
+            const annotationMockupFrame = document.getElementById("annotation-mockup-frame");
+            const frameOldContent = annotationMockupFrame.querySelector(".feature-mockup-container");
+            if (frameOldContent) frameOldContent.remove();
+            annotationMockupFrame.insertAdjacentHTML("afterbegin", data.features.mockupHtml);
+
+            // Place Hotspots
+            const hotspotsOverlay = document.getElementById("hotspots-overlay");
+            hotspotsOverlay.innerHTML = "";
+            
+            const annoTitle = document.getElementById("anno-title");
+            const annoDesc = document.getElementById("anno-desc");
+
+            data.features.hotspots.forEach((hs, idx) => {
+                const point = document.createElement("div");
+                point.className = `hotspot-point ${idx === 0 ? 'active' : ''}`;
+                point.style.left = `${hs.x}%`;
+                point.style.top = `${hs.y}%`;
+                point.innerHTML = `
+                    ${idx + 1}
+                    <div class="hotspot-pulse"></div>
+                `;
+
+                point.addEventListener("click", () => {
+                    document.querySelectorAll(".hotspot-point").forEach(p => p.classList.remove("active"));
+                    point.classList.add("active");
+                    
+                    // Highlight custom items inside the HTML mockup if ID exists
+                    const mockupElements = annotationMockupFrame.querySelectorAll("[id^='hotspot-']");
+                    mockupElements.forEach(el => el.classList.remove("active"));
+                    
+                    // Activate corresponding target mockup element in DOM order
+                    const targetEl = mockupElements[idx];
+                    if (targetEl) {
+                        targetEl.classList.add("active");
+                    }
+                    
+                    // Update details card
+                    annoTitle.textContent = `${idx + 1}. ${hs.title}`;
+                    annoDesc.textContent = hs.desc;
+
+                    // Animate desc card entrance
+                    const cardEl = document.getElementById("annotation-detail-card");
+                    cardEl.style.transform = "translateX(5px)";
+                    setTimeout(() => cardEl.style.transform = "none", 150);
+                });
+
+                hotspotsOverlay.appendChild(point);
+            });
+
+            // Trigger click on first hotspot by default to show metadata
+            if (data.features.hotspots.length > 0) {
+                setTimeout(() => {
+                    const firstHs = hotspotsOverlay.querySelector(".hotspot-point");
+                    if (firstHs) firstHs.click();
+                }, 500);
+            }
+
+            // Populate Animated SVG System Design
+            const svgEl = document.getElementById("sys-svg");
+            svgEl.innerHTML = "";
+
+            // Create glowing drop shadow filters matching the dynamic theme color
+            const svgDefs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+            svgDefs.innerHTML = `
+                <filter id="node-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="var(--theme-primary)" flood-opacity="0.25" />
+                </filter>
+                <filter id="edge-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="var(--theme-primary)" flood-opacity="0.4" />
+                </filter>
+            `;
+            svgEl.appendChild(svgDefs);
+
+            // 1. Draw Edges
+            data.systemDesign.edges.forEach((edge, i) => {
+                const fromNode = data.systemDesign.nodes.find(n => n.id === edge.from);
+                const toNode = data.systemDesign.nodes.find(n => n.id === edge.to);
+                
+                if (fromNode && toNode) {
+                    const x1 = fromNode.x + 85;
+                    const y1 = fromNode.y + 25;
+                    const x2 = toNode.x + 85;
+                    const y2 = toNode.y + 25;
+
+                    let pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
+                    if (Math.abs(y2 - y1) > 80) {
+                        const midX = (x1 + x2) / 2;
+                        pathD = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
+                    }
+
+                    // Path element
+                    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                    path.setAttribute("d", pathD);
+                    path.setAttribute("class", `sys-edge-path ${edge.animated ? 'animated' : ''}`);
+                    path.setAttribute("id", `edge-${fromNode.id}-${toNode.id}`);
+                    svgEl.appendChild(path);
+
+                    // Dynamic floating data packets along connection edges
+                    if (edge.animated) {
+                        const particle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        particle.setAttribute("r", "4");
+                        particle.setAttribute("fill", "var(--theme-primary)");
+                        particle.setAttribute("class", "sys-particle");
+                        
+                        const animMotion = document.createElementNS("http://www.w3.org/2000/svg", "animateMotion");
+                        animMotion.setAttribute("path", pathD);
+                        animMotion.setAttribute("dur", `${Math.random() * 2 + 2}s`);
+                        animMotion.setAttribute("repeatCount", "indefinite");
+                        
+                        particle.appendChild(animMotion);
+                        svgEl.appendChild(particle);
+                    }
+
+                    // Optional edge label
+                    if (edge.label) {
+                        const labelX = (x1 + x2) / 2;
+                        const labelY = (y1 + y2) / 2 - 8;
+
+                        const rectBg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rectBg.setAttribute("x", labelX - (edge.label.length * 3) - 4);
+                        rectBg.setAttribute("y", labelY - 7);
+                        rectBg.setAttribute("width", (edge.label.length * 6) + 8);
+                        rectBg.setAttribute("height", 12);
+                        rectBg.setAttribute("class", "sys-edge-label-bg");
+                        svgEl.appendChild(rectBg);
+
+                        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                        text.setAttribute("x", labelX);
+                        text.setAttribute("y", labelY + 2);
+                        text.setAttribute("class", "sys-edge-label");
+                        text.textContent = edge.label;
+                        svgEl.appendChild(text);
+                    }
+                }
+            });
+
+            // 2. Draw Nodes
+            const sidebarTag = document.getElementById("sys-sidebar-tag");
+            const sidebarTitle = document.getElementById("sys-sidebar-title");
+            const sidebarDesc = document.getElementById("sys-sidebar-desc");
+            const terminalConsole = document.getElementById("sys-terminal-console");
+            let logTimer = null;
+
+            function startTerminalLogging(nodeId) {
+                if (logTimer) clearInterval(logTimer);
+                terminalConsole.innerHTML = "";
+                
+                const logTemplates = {
+                    client: [
+                        { type: 'info', text: '[PWA] Initializing client workspace environment...' },
+                        { type: 'success', text: '[PWA] Offline service worker thread active.' },
+                        { type: 'info', text: '[WS] Request connection broker socket channel...' },
+                        { type: 'success', text: '[WS] Socket connection active. ID: ws_dev_' + Math.random().toString(36).substring(7) },
+                        { type: 'info', text: '[HTTP] POST /api/auth/session - 200 OK (8ms)' },
+                        { type: 'info', text: '[PWA] Syncing local cache databases (IndexedDB)...' },
+                        { type: 'success', text: '[PWA] Local workspace cache synchronized.' }
+                    ],
+                    gateway: [
+                        { type: 'info', text: '[Gateway] Nginx listener matching URI route endpoints...' },
+                        { type: 'info', text: '[Gateway] Security CORS policies loaded: OK' },
+                        { type: 'info', text: '[Gateway] Proxy traffic upstream forward -> app_node_server:3000' },
+                        { type: 'success', text: '[Gateway] HTTP connection proxy successful. 200 OK' },
+                        { type: 'info', text: '[Gateway] Upgrading HTTP connection to WebSocket channel...' },
+                        { type: 'success', text: '[Gateway] Upgraded protocol: WebSocket active.' }
+                    ],
+                    ws_server: [
+                        { type: 'info', text: '[WS-Broker] Socket server listening on dynamic port' },
+                        { type: 'info', text: '[WS-Broker] Client handshake approved: ws_channel_' + Math.random().toString(36).substring(5) },
+                        { type: 'success', text: '[WS-Broker] Client joined message room successfully.' },
+                        { type: 'info', text: '[WS-Broker] Broadcasting socket message frame to active receivers' },
+                        { type: 'info', text: '[WS-Broker] Logging message frame to storage cache' }
+                    ],
+                    api_server: [
+                        { type: 'info', text: '[App-Backend] Server parsing matching parameters...' },
+                        { type: 'info', text: '[App-Backend] User auth validation checklist complete.' },
+                        { type: 'info', text: '[App-Backend] Querying pgvector model embeddings...' },
+                        { type: 'success', text: '[App-Backend] Calculation complete. Score output: 96% match' },
+                        { type: 'info', text: '[App-Backend] Request completed in 12ms. Status: 200 OK' }
+                    ],
+                    vector_db: [
+                        { type: 'info', text: '[Database] Vector DB pool running (8 active pools)' },
+                        { type: 'info', text: '[Database] Calculating cosine index similarity distances...' },
+                        { type: 'success', text: '[Database] Query matched candidates in database in 2.2ms.' },
+                        { type: 'info', text: '[Database] Database payload compression complete: 1.4KB returned.' }
+                    ],
+                    database: [
+                        { type: 'info', text: '[DB] Database connection pools validated.' },
+                        { type: 'info', text: '[DB] Running schema integrity check...' },
+                        { type: 'success', text: '[DB] Database operating at optimal performance levels.' }
+                    ],
+                    transformers: [
+                        { type: 'info', text: '[Transformers] Instantiating ONNX client inference model...' },
+                        { type: 'success', text: '[Transformers] ONNX model initialized.' },
+                        { type: 'info', text: '[Transformers] Running tokenization parsing on user context...' },
+                        { type: 'success', text: '[Transformers] Dense vector embedding generation complete: 384 dimensions' }
+                    ],
+                    sqlite: [
+                        { type: 'info', text: '[SQLite] Checking database path indexes...' },
+                        { type: 'info', text: '[SQLite] Running select query matches...' },
+                        { type: 'success', text: '[SQLite] Retrieved query results in 1ms.' }
+                    ],
+                    ollama: [
+                        { type: 'info', text: '[LLM-Engine] Initializing Llama-3 local network weights...' },
+                        { type: 'info', text: '[LLM-Engine] Processing query contexts...' },
+                        { type: 'success', text: '[LLM-Engine] Sentence parsing complete. Generating response tokens.' }
+                    ],
+                    local_app: [
+                        { type: 'info', text: '[Electron-Core] Desktop window environment loaded.' },
+                        { type: 'info', text: '[Electron-Core] Initializing local file write watcher...' },
+                        { type: 'success', text: '[Electron-Core] Watcher active.' }
+                    ]
+                };
+                
+                const logs = logTemplates[nodeId] || logTemplates['database'];
+                let index = 0;
+                
+                function printNextLog() {
+                    if (index >= logs.length) index = 0;
+                    
+                    const log = logs[index];
+                    const row = document.createElement("p");
+                    row.className = `sys-terminal-row ${log.type === 'success' ? 'info' : log.type}`;
+                    
+                    const time = new Date().toLocaleTimeString();
+                    row.innerHTML = `<span style="color:#6e7681;">[${time}]</span> ${log.text}`;
+                    
+                    terminalConsole.appendChild(row);
+                    terminalConsole.scrollTop = terminalConsole.scrollHeight;
+                    
+                    index++;
+                    logTimer = setTimeout(printNextLog, Math.random() * 800 + 400);
+                }
+                
+                printNextLog();
+            }
+
+            data.systemDesign.nodes.forEach(node => {
+                const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                g.setAttribute("class", "sys-node-g");
+                g.setAttribute("id", `node-${node.id}`);
+
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("x", node.x);
+                rect.setAttribute("y", node.y);
+                rect.setAttribute("width", 170);
+                rect.setAttribute("height", 50);
+                rect.setAttribute("class", `sys-node-rect ${node.type}`);
+                g.appendChild(rect);
+
+                const titleText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                titleText.setAttribute("x", node.x + 85);
+                titleText.setAttribute("y", node.y + 24);
+                titleText.setAttribute("class", "sys-node-text");
+                titleText.textContent = node.label;
+                g.appendChild(titleText);
+
+                const typeText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                typeText.setAttribute("x", node.x + 85);
+                typeText.setAttribute("y", node.y + 38);
+                typeText.setAttribute("class", "sys-node-type-text");
+                typeText.textContent = node.type.toUpperCase();
+                g.appendChild(typeText);
+
+                g.addEventListener("click", () => {
+                    document.querySelectorAll(".sys-node-g").forEach(el => el.classList.remove("active"));
+                    g.classList.add("active");
+
+                    sidebarTag.textContent = node.type.toUpperCase();
+                    sidebarTitle.textContent = node.label;
+                    sidebarDesc.textContent = node.info;
+
+                    // Trigger simulated terminal logs output
+                    startTerminalLogging(node.id);
+
+                    const sidebar = document.querySelector(".sys-sidebar");
+                    sidebar.style.transform = "scale(0.99)";
+                    setTimeout(() => sidebar.style.transform = "none", 100);
+                });
+
+                svgEl.appendChild(g);
+            });
+
+            // Activate default gateway node on system design load
+            setTimeout(() => {
+                const defaultNode = svgEl.querySelector("#node-api_server") || svgEl.querySelector(".sys-node-g");
+                if (defaultNode) defaultNode.click();
+            }, 600);
+
+            // Active Navigation Links Highlighting on Scroll
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".v-nav-link");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${current}`) {
+                        link.classList.add("active");
+                    }
+                });
+                
+                // Recalculate capsule position to follow active
+                const currentActive = navContainer.querySelector(".v-nav-link.active");
+                if (currentActive && !isHovered) {
+                    moveCapsuleTo(currentActive);
+                }
+            });
+
+            // Smooth Scroll on header navigation clicks
+            navLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+
+            // Creative Innovation: Cursor Spotlight Glow Effect for Cards
+            const cards = document.querySelectorAll(".premium-card");
+            cards.forEach(card => {
+                card.addEventListener("mousemove", (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty("--mouse-x", `${x}px`);
+                    card.style.setProperty("--mouse-y", `${y}px`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
