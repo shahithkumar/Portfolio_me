@@ -185,7 +185,11 @@
                     <iframe id="tour-vimeo-iframe" src="" style="position: absolute; top: 0; left: -10%; width: 120%; height: 114%; border: none; z-index: 1; display: none; object-fit: cover;" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video"></iframe>
                     <div class="video-thumbnail" id="video-thumbnail" style="z-index: 2;">
                         <div class="video-overlay-glow"></div>
-                        <button class="video-play-btn" id="video-play-btn" aria-label="Play Walkthrough Video">
+                        <div class="video-loading-indicator" id="video-loading-indicator" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; color: rgba(255,255,255,0.85); font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 500;">
+                            <div class="video-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.15); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                            <span>Please wait while video is loading...</span>
+                        </div>
+                        <button class="video-play-btn" id="video-play-btn" aria-label="Play Walkthrough Video" style="display: none;">
                             <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <polygon points="6 3 20 12 6 21 6 3"></polygon>
                             </svg>
@@ -668,8 +672,6 @@
                 tourVimeoIframe.src = data.video.vimeoUrl;
                 tourVimeoIframe.style.display = "block";
                 tourVideo.style.display = "none";
-                videoThumbnail.classList.add("playing");
-                isPlaying = true;
                 
                 vimeoPlayer = new Vimeo.Player(tourVimeoIframe);
                 
@@ -677,6 +679,11 @@
                     vimeoPlayer.getDuration().then((duration) => {
                         vimeoDuration = duration;
                     });
+                    
+                    const loader = document.getElementById("video-loading-indicator");
+                    if (loader) loader.style.display = "none";
+                    videoPlayBtn.style.display = "flex";
+                    
                     vimeoPlayer.getPaused().then((paused) => {
                         if (!paused) {
                             videoThumbnail.classList.add("playing");
@@ -700,6 +707,8 @@
                 vimeoPlayer.on("play", () => {
                     isPlaying = true;
                     videoThumbnail.classList.add("playing");
+                    const loader = document.getElementById("video-loading-indicator");
+                    if (loader) loader.style.display = "none";
                 });
                 
                 vimeoPlayer.on("pause", () => {
@@ -723,6 +732,10 @@
                 });
                 
             } else if (data.video.videoUrl) {
+                const loader = document.getElementById("video-loading-indicator");
+                if (loader) loader.style.display = "none";
+                videoPlayBtn.style.display = "flex";
+                
                 tourVimeoIframe.style.display = "none";
                 tourVideo.src = data.video.videoUrl;
                 tourVideo.style.display = "block";
@@ -772,6 +785,10 @@
                     document.addEventListener("scroll", autoPlayVideo, { once: true });
                 });
             } else {
+                const loader = document.getElementById("video-loading-indicator");
+                if (loader) loader.style.display = "none";
+                videoPlayBtn.style.display = "flex";
+                
                 tourVimeoIframe.style.display = "none";
                 tourVideo.style.display = "none";
                 // Auto-play simulated walkthrough
