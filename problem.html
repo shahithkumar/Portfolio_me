@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="problem.css">
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body class="problem-page">
 
@@ -178,6 +179,7 @@
                 <!-- Left: Interactive Video Player Mockup -->
                 <div class="video-container">
                     <video id="tour-video" playsinline autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 112%; object-fit: cover; z-index: 1; display: none; object-position: top;"></video>
+                    <iframe id="tour-vimeo-iframe" src="" style="position: absolute; top: 0; left: 0; width: 100%; height: 112%; border: none; z-index: 1; display: none; object-fit: cover;" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video"></iframe>
                     <div class="video-thumbnail" id="video-thumbnail" style="z-index: 2;">
                         <div class="video-overlay-glow"></div>
                         <button class="video-play-btn" id="video-play-btn" aria-label="Play Walkthrough Video">
@@ -599,7 +601,12 @@
                 // Add click listener to seek to the start of the point
                 item.addEventListener("click", () => {
                     const targetPercent = i === 0 ? 0 : (i === 1 ? 34 : 67);
-                    if (data.video.videoUrl) {
+                    if (vimeoPlayer) {
+                        if (vimeoDuration) {
+                            vimeoPlayer.setCurrentTime((targetPercent / 100) * vimeoDuration);
+                            vimeoPlayer.play().catch(err => console.log(err));
+                        }
+                    } else if (data.video.videoUrl) {
                         const video = document.getElementById("tour-video");
                         if (video && video.duration) {
                             video.currentTime = (targetPercent / 100) * video.duration;
@@ -644,15 +651,69 @@
             const videoProgressFill = document.getElementById("video-progress-fill");
             const videoTimeElapsed = document.querySelector(".video-time-elapsed");
             const tourVideo = document.getElementById("tour-video");
+            const tourVimeoIframe = document.getElementById("tour-vimeo-iframe");
             const videoProgressBarWrapper = document.querySelector(".video-progress-bar-wrapper");
             
             let isPlaying = false;
             let playbackInterval = null;
             let elapsedPercent = 0;
             const simulatedDurationSeconds = 12; // 12s walkthrough simulation
+            let vimeoPlayer = null;
+            let vimeoDuration = 0;
             
             // Initialize Video Source if available
-            if (data.video.videoUrl) {
+            if (data.video.vimeoUrl) {
+                tourVimeoIframe.src = data.video.vimeoUrl;
+                tourVimeoIframe.style.display = "block";
+                tourVideo.style.display = "none";
+                
+                vimeoPlayer = new Vimeo.Player(tourVimeoIframe);
+                
+                vimeoPlayer.on("loaded", () => {
+                    vimeoPlayer.getDuration().then((duration) => {
+                        vimeoDuration = duration;
+                    });
+                });
+                
+                vimeoPlayer.on("timeupdate", (event) => {
+                    vimeoDuration = event.duration;
+                    const pct = event.percent * 100;
+                    videoProgressFill.style.width = `${pct}%`;
+                    
+                    const m = Math.floor(event.seconds / 60);
+                    const s = Math.floor(event.seconds % 60);
+                    videoTimeElapsed.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+                    
+                    updateExplanationActivePoints(pct);
+                });
+                
+                vimeoPlayer.on("play", () => {
+                    isPlaying = true;
+                    videoThumbnail.classList.add("playing");
+                });
+                
+                vimeoPlayer.on("pause", () => {
+                    isPlaying = false;
+                    videoThumbnail.classList.remove("playing");
+                });
+                
+                vimeoPlayer.on("ended", () => {
+                    isPlaying = false;
+                    videoThumbnail.classList.remove("playing");
+                });
+                
+                // Auto-play attempt
+                const autoPlayVimeo = () => {
+                    vimeoPlayer.play().catch(e => console.log("Vimeo autoplay failed:", e));
+                };
+                vimeoPlayer.play().catch(err => {
+                    console.log("Vimeo autoplay blocked, listening for gesture:", err);
+                    document.addEventListener("click", autoPlayVimeo, { once: true });
+                    document.addEventListener("scroll", autoPlayVimeo, { once: true });
+                });
+                
+            } else if (data.video.videoUrl) {
+                tourVimeoIframe.style.display = "none";
                 tourVideo.src = data.video.videoUrl;
                 tourVideo.style.display = "block";
                 tourVideo.muted = true;
@@ -701,6 +762,8 @@
                     document.addEventListener("scroll", autoPlayVideo, { once: true });
                 });
             } else {
+                tourVimeoIframe.style.display = "none";
+                tourVideo.style.display = "none";
                 // Auto-play simulated walkthrough
                 toggleVideoPlayback();
             }
@@ -713,7 +776,11 @@
                     const width = rect.width;
                     const pct = Math.max(0, Math.min(1, clickX / width));
                     
-                    if (data.video.videoUrl) {
+                    if (vimeoPlayer) {
+                        if (vimeoDuration) {
+                            vimeoPlayer.setCurrentTime(pct * vimeoDuration);
+                        }
+                    } else if (data.video.videoUrl) {
                         if (tourVideo.duration) {
                             tourVideo.currentTime = pct * tourVideo.duration;
                         }
@@ -733,7 +800,15 @@
             }
             
             function toggleVideoPlayback() {
-                if (data.video.videoUrl) {
+                if (vimeoPlayer) {
+                    vimeoPlayer.getPaused().then((paused) => {
+                        if (paused) {
+                            vimeoPlayer.play().catch(err => console.log("Vimeo play failed:", err));
+                        } else {
+                            vimeoPlayer.pause();
+                        }
+                    });
+                } else if (data.video.videoUrl) {
                     if (tourVideo.paused) {
                         tourVideo.play().catch(err => console.log("Video play failed:", err));
                     } else {
