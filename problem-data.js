@@ -7,7 +7,7 @@ export const PROBLEM_DETAILS = {
         tagline: "Bypass the ATS black hole. Connect directly with hiring managers in real-time.",
         creator: "Shahith Kumar",
         year: "2026",
-        link: "https://github.com/shahith/job-flow",
+        link: "https://github.com/shahithkumar/job-flow",
         theme: "gold",
         themeColors: {
             primary: "var(--box-gold-fg)",
@@ -185,7 +185,7 @@ export const PROBLEM_DETAILS = {
         tagline: "Ditch the tourists. Discover authentic local secrets tailored to your mood.",
         creator: "Shahith Kumar",
         year: "2025",
-        link: "https://github.com/shahith/roam-ai",
+        link: "https://github.com/shahithkumar/roam-ai",
         theme: "purple",
         themeColors: {
             primary: "var(--box-purple-fg)",
@@ -340,7 +340,7 @@ export const PROBLEM_DETAILS = {
         tagline: "From photo to checkout link in under 60 seconds. Zero code, zero subscription fee.",
         creator: "Shahith Kumar",
         year: "2025",
-        link: "https://github.com/shahith/snap-shop",
+        link: "https://github.com/shahithkumar/snap-shop",
         theme: "green",
         themeColors: {
             primary: "var(--box-green-fg)",
@@ -482,7 +482,7 @@ export const PROBLEM_DETAILS = {
         tagline: "An anonymous, encrypted, safe space to share and heal. Entirely free.",
         creator: "Shahith Kumar",
         year: "2024",
-        link: "https://github.com/shahith/haven-support",
+        link: "https://github.com/shahithkumar/haven-support",
         theme: "pink",
         themeColors: {
             primary: "var(--box-pink-fg)",
@@ -629,7 +629,7 @@ export const PROBLEM_DETAILS = {
         tagline: "Your AI language partner. Talk naturally, get real-time pronunciation tips.",
         creator: "Shahith Kumar",
         year: "2024",
-        link: "https://github.com/shahith/speakeasy-ai",
+        link: "https://github.com/shahithkumar/speakeasy-ai",
         theme: "blue",
         themeColors: {
             primary: "var(--box-blue-fg)",
@@ -783,7 +783,7 @@ export const PROBLEM_DETAILS = {
         tagline: "Your local second brain. Private semantic search over thousands of files.",
         creator: "Shahith Kumar",
         year: "2024",
-        link: "https://github.com/shahith/kortex-notes",
+        link: "https://github.com/shahithkumar/kortex-notes",
         theme: "orange",
         themeColors: {
             primary: "var(--box-orange-fg)",
@@ -928,7 +928,7 @@ export const PROBLEM_DETAILS = {
         tagline: "Stop mindless YouTube scrolling. Set a goal, focus your search, and get back to work.",
         creator: "Shahith Kumar",
         year: "2026",
-        link: "https://github.com/shahith/intent-tube",
+        link: "https://github.com/shahithkumar/Intent_Tube",
         ctaText: "Get GitHub Link",
         theme: "red",
         themeColors: {

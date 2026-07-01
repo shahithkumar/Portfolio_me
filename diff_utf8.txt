@@ -1,0 +1,192 @@
+﻿diff --git a/style.css b/style.css
+index 6dd2dff..282d8ea 100644
+--- a/style.css
++++ b/style.css
+@@ -289,67 +289,7 @@ body {
+     height: fit-content;
+ }
+ 
+-/* Profile Status Pill */
+-.profile-status {
+-    display: inline-flex;
+-    align-items: center;
+-    gap: 0.5rem;
+-    background: var(--bg-card);
+-    border: 1px solid var(--border-card);
+-    padding: 0.45rem 0.9rem;
+-    border-radius: 100px;
+-    width: fit-content;
+-    box-shadow: var(--card-shadow);
+-    margin-bottom: 1.5rem;
+-    align-self: flex-start;
+-}
+-
+-.status-indicator {
+-    position: relative;
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    width: 8px;
+-    height: 8px;
+-}
+-
+-.status-dot {
+-    width: 8px;
+-    height: 8px;
+-    background-color: var(--box-green-fg);
+-    border-radius: 50%;
+-    z-index: 2;
+-}
+-
+-.status-ping {
+-    position: absolute;
+-    width: 100%;
+-    height: 100%;
+-    background-color: var(--box-green-fg);
+-    border-radius: 50%;
+-    animation: statusPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+-    opacity: 0.6;
+-    z-index: 1;
+-}
+-
+-@keyframes statusPing {
+-    0% {
+-        transform: scale(1);
+-        opacity: 0.8;
+-    }
+-    100% {
+-        transform: scale(3);
+-        opacity: 0;
+-    }
+-}
+ 
+-.status-text {
+-    font-family: var(--font-heading);
+-    font-size: 0.75rem;
+-    font-weight: 700;
+-    letter-spacing: 1px;
+-    color: var(--text-muted);
+-}
+ 
+ .profile-info {
+     display: flex;
+@@ -1253,9 +1193,7 @@ body {
+         margin: 0 auto;
+     }
+     
+-    .profile-status {
+-        align-self: center;
+-    }
++
+     
+     .profile-info {
+         align-items: center;
+@@ -1925,108 +1863,7 @@ body {
+ 
+ 
+ 
+-/* About Me & Now Details section */
+-.about-now-section {
+-    width: 100%;
+-    margin-bottom: 1.75rem;
+-}
+-
+-.about-now-title {
+-    font-family: var(--font-heading);
+-    font-size: 0.72rem;
+-    font-weight: 800;
+-    letter-spacing: 1.5px;
+-    text-transform: uppercase;
+-    color: var(--text-muted);
+-    margin-bottom: 0.75rem;
+-    border-bottom: 1px dashed var(--border-card);
+-    padding-bottom: 0.35rem;
+-}
+ 
+-.currently-building-widget {
+-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-elevated) 100%);
+-    border: 1px solid var(--border-card);
+-    border-radius: 16px;
+-    padding: 1.25rem;
+-    box-shadow: var(--card-shadow);
+-    display: flex;
+-    flex-direction: column;
+-    gap: 0.5rem;
+-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+-    position: relative;
+-    overflow: hidden;
+-}
+-
+-.currently-building-widget::before {
+-    content: '';
+-    position: absolute;
+-    top: 0;
+-    left: 0;
+-    right: 0;
+-    height: 2px;
+-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+-    opacity: 0;
+-    transition: opacity 0.3s ease;
+-}
+-
+-.currently-building-widget:hover::before {
+-    opacity: 1;
+-}
+-
+-.currently-building-widget:hover {
+-    border-color: var(--border-card-hover);
+-    box-shadow: var(--card-shadow-hover);
+-    transform: translateY(-3px);
+-}
+-
+-.currently-building-header {
+-    display: flex;
+-    align-items: center;
+-    gap: 0.5rem;
+-}
+-
+-.currently-building-label {
+-    font-family: var(--font-heading);
+-    font-size: 0.65rem;
+-    font-weight: 800;
+-    letter-spacing: 1.5px;
+-    color: var(--box-green-fg);
+-    text-transform: uppercase;
+-}
+-
+-.currently-building-title {
+-    font-family: var(--font-heading);
+-    font-size: 1.15rem;
+-    font-weight: 800;
+-    color: var(--text-main);
+-}
+-
+-.currently-building-desc {
+-    font-size: 0.82rem;
+-    line-height: 1.4;
+-    color: var(--text-muted);
+-}
+-
+-.currently-building-meta {
+-    display: flex;
+-    align-items: center;
+-    gap: 0.5rem;
+-    font-size: 0.75rem;
+-    font-weight: 500;
+-    color: var(--text-muted);
+-    margin-top: 0.15rem;
+-}
+-
+-.currently-building-link {
+-    color: var(--accent);
+-    text-decoration: none;
+-    font-weight: 600;
+-    transition: color 0.2s ease;
+-}
+-
+-.currently-building-link:hover {
+-    color: var(--text-main);
+-}
+ 
+ /* ==========================================================================
+    Premium Entry Animations
