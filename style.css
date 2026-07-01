@@ -746,150 +746,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Presented By */
-.card-presented-by {
-    position: absolute;
-    bottom: 1.85rem;
-    left: 50%;
-    transform: translateX(-50%) translateZ(15px);
-    font-family: var(--font-heading);
-    font-size: 0.55rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
-    width: max-content;
-    z-index: 10;
-}
-
-/* Website URL */
-.card-website-url {
-    position: absolute;
-    bottom: 1.05rem;
-    left: 50%;
-    transform: translateX(-50%) translateZ(15px);
-    font-family: var(--font-body);
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.problem-card:hover .card-website-url {
-    color: rgba(255, 255, 255, 0.95);
-}
-
-/* Version Label */
-.card-version-label {
-    position: absolute;
-    bottom: 0.95rem;
-    left: 1.25rem;
-    font-family: var(--font-heading);
-    font-size: 0.55rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.15rem 0.45rem;
-    border-radius: 4px;
-    z-index: 10;
-    transform: translateZ(15px);
-    transition: all 0.3s ease;
-}
-
-.problem-card:hover .card-version-label {
-    color: rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Right Sidebar Action Indicator */
-.card-right-sidebar {
-    position: absolute;
-    top: 1rem;
-    right: 0.85rem;
-    bottom: 1rem;
-    width: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    color: rgba(255, 255, 255, 0.6);
-    z-index: 10;
-    transform: translateZ(15px);
-    transition: color 0.3s ease;
-}
-
-.problem-card:hover .card-right-sidebar {
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.card-search-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8;
-}
-
-.card-sidebar-dashed-line {
-    flex-grow: 1;
-    width: 1px;
-    border-left: 1px dashed rgba(255, 255, 255, 0.25);
-    margin: 4px 0;
-}
-
-.card-sidebar-solid-line {
-    height: 12px;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.25);
-    margin-top: 4px;
-}
-
-.card-sidebar-text {
-    font-family: var(--font-heading);
-    font-size: 0.52rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    white-space: nowrap;
-    margin: 4px 0;
-    opacity: 0.8;
-}
-
-.card-mouse-icon {
-    width: 10px;
-    height: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    position: relative;
-    margin: 4px 0;
-    opacity: 0.8;
-}
-
-.card-mouse-wheel {
-    width: 2px;
-    height: 3px;
-    background-color: #ffffff;
-    border-radius: 1px;
-    position: absolute;
-    top: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: mouseScroll 1.8s infinite ease-in-out;
-}
-
-@keyframes mouseScroll {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    50% { transform: translate(-50%, 3px); opacity: 0.3; }
-    100% { transform: translate(-50%, 0); opacity: 1; }
-}
-
 /* Card Tilt and Hover pop-out animations */
 .problem-card:hover .card-logo-wrapper {
     transform: translateZ(50px) scale(1.06);
@@ -904,12 +760,6 @@ body {
 
 .problem-card:hover .card-product-tagline {
     transform: translateZ(30px);
-}
-
-.problem-card:hover .card-presented-by,
-.problem-card:hover .card-website-url,
-.problem-card:hover .card-version-label {
-    transform: translateZ(25px);
 }
 
 /* Premium Radial-Gradient Theme Backgrounds */
@@ -1342,23 +1192,9 @@ body {
     .card-product-name {
         font-size: 1.4rem;
     }
-    .card-website-url {
-        bottom: 1.15rem;
-        font-size: 0.62rem;
-    }
-    .card-version-label {
-        bottom: 1.05rem;
-        left: 1.25rem;
-        font-size: 0.52rem;
-    }
     .card-menu-tag {
         top: 1rem;
         left: 1.25rem;
-    }
-    .card-right-sidebar {
-        top: 1rem;
-        right: 0.85rem;
-        bottom: 1rem;
     }
 }
 
