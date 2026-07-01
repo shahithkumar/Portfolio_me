@@ -178,8 +178,8 @@
             <div class="video-grid">
                 <!-- Left: Interactive Video Player Mockup -->
                 <div class="video-container">
-                    <video id="tour-video" playsinline autoplay muted loop style="position: absolute; top: -3%; left: -10%; width: 120%; height: 114%; object-fit: cover; z-index: 1; display: none;"></video>
-                    <iframe id="tour-vimeo-iframe" src="" style="position: absolute; top: -3%; left: -10%; width: 120%; height: 114%; border: none; z-index: 1; display: none; object-fit: cover;" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video"></iframe>
+                    <video id="tour-video" playsinline autoplay muted loop style="position: absolute; top: 0; left: -10%; width: 120%; height: 114%; object-fit: cover; z-index: 1; display: none;"></video>
+                    <iframe id="tour-vimeo-iframe" src="" style="position: absolute; top: 0; left: -10%; width: 120%; height: 114%; border: none; z-index: 1; display: none; object-fit: cover;" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video"></iframe>
                     <div class="video-thumbnail" id="video-thumbnail" style="z-index: 2;">
                         <div class="video-overlay-glow"></div>
                         <button class="video-play-btn" id="video-play-btn" aria-label="Play Walkthrough Video">
@@ -661,17 +661,24 @@
             let vimeoPlayer = null;
             let vimeoDuration = 0;
             
-            // Initialize Video Source if available
             if (data.video.vimeoUrl) {
                 tourVimeoIframe.src = data.video.vimeoUrl;
                 tourVimeoIframe.style.display = "block";
                 tourVideo.style.display = "none";
+                videoThumbnail.classList.add("playing");
+                isPlaying = true;
                 
                 vimeoPlayer = new Vimeo.Player(tourVimeoIframe);
                 
                 vimeoPlayer.on("loaded", () => {
                     vimeoPlayer.getDuration().then((duration) => {
                         vimeoDuration = duration;
+                    });
+                    vimeoPlayer.getPaused().then((paused) => {
+                        if (!paused) {
+                            videoThumbnail.classList.add("playing");
+                            isPlaying = true;
+                        }
                     });
                 });
                 
