@@ -1,5 +1,5 @@
 // Rich Dataset for Problem Pages
-const PROBLEM_DETAILS = {
+export const PROBLEM_DETAILS = {
     "1": {
         id: "1",
         title: "How can students find jobs faster?",
@@ -111,6 +111,7 @@ const PROBLEM_DETAILS = {
         video: {
             videoTitle: "JobFlow Walkthrough",
             videoDuration: "1:42",
+            videoUrl: "REAL 2.mp4",
             explanationPoints: [
                 { title: "One-Click Sync", text: "Directly import repositories, commits, and packages from GitHub to build a dynamic skill index." },
                 { title: "AI-Powered Matching", text: "Matches students not on buzzwords, but on code patterns, complexity, and active developer habits." },
@@ -923,11 +924,12 @@ const PROBLEM_DETAILS = {
     "7": {
         id: "7",
         title: "How do I stop wasting time on YouTube?",
-        productName: "YouTube Focus",
+        productName: "Intent Tube",
         tagline: "Stop mindless YouTube scrolling. Set a goal, focus your search, and get back to work.",
         creator: "Shahith Kumar",
         year: "2026",
-        link: "https://github.com/shahith/youtube-focus",
+        link: "https://github.com/shahith/intent-tube",
+        ctaText: "Get GitHub Link",
         theme: "red",
         themeColors: {
             primary: "var(--box-red-fg)",
@@ -942,7 +944,7 @@ const PROBLEM_DETAILS = {
                 "Clickbait videos designed to distract",
                 "2 hours wasted watching random facts"
             ],
-            rightLabel: "YouTube Focus Extension",
+            rightLabel: "Intent Tube Extension",
             rightItems: [
                 "Clean, empty search page by default",
                 "Prompt forces you to type your viewing goal",
@@ -953,7 +955,7 @@ const PROBLEM_DETAILS = {
             gif: "assets/youtube-focus-meme.gif"
         },
         origin: {
-            story: `I wanted to spend 15 minutes watching a coding tutorial on WebSockets, but got sucked into an autoplaying video about coffee roasting. Three hours later, I hadn't written a single line of code. I realized that willpower is no match for a multi-billion dollar algorithm engineered to hold your attention. I built YouTube Focus to reclaim my attention span.
+            story: `I wanted to spend 15 minutes watching a coding tutorial on WebSockets, but got sucked into an autoplaying video about coffee roasting. Three hours later, I hadn't written a single line of code. I realized that willpower is no match for a multi-billion dollar algorithm engineered to hold your attention. I built Intent Tube to reclaim my attention span.
 
 When I started researching this problem, I noticed something interesting. People weren't looking for another productivity app; they already had plenty of those. The real problem happened inside the browser—the exact moment they opened YouTube with a purpose and got pulled into endless recommendations.
 
@@ -975,7 +977,7 @@ Most productivity tools fight this by locking you out. But people don't want to 
                 },
                 {
                     title: "The Shield",
-                    text: "I built YouTube Focus as a lightweight Chrome extension. Instead of forcing new habits, it blocks recommendation feeds at the source, prompting users to state their goal, keeping them mindful and on track."
+                    text: "I built Intent Tube as a lightweight Chrome extension. Instead of forcing new habits, it blocks recommendation feeds at the source, prompting users to state their goal, keeping them mindful and on track."
                 }
             ],
             stats: []
@@ -1098,7 +1100,10 @@ Most productivity tools fight this by locking you out. But people don't want to 
                     contentHtml: `
                         <div class="it-block-screen">
                             <div class="it-block-card">
-                                <div class="it-block-lock-icon">🔒</div>
+                                <svg class="it-block-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
                                 <h3 class="it-block-title">Session Intercepted!</h3>
                                 <div class="it-intent-badge">
                                     <span class="it-intent-label">CURRENT INTENT</span>
@@ -1119,42 +1124,91 @@ Most productivity tools fight this by locking you out. But people don't want to 
             ]
         },
         video: {
-            videoTitle: "YouTube Focus Demo",
+            videoTitle: "Intent Tube Demo",
             videoDuration: "1:02",
+            videoUrl: "REAL 2.mp4",
             explanationPoints: [
-                { title: "DOM Observer Blocking", text: "Uses Chrome's MutationObserver API to intercept and strip home feed recommendation elements before they can render." },
-                { title: "Chrome Storage Goal State", text: "Persists the user's intent locally inside Chrome Storage Sync. Only allows searches matching semantic goal scopes." },
-                { title: "CSS Injection Filter", text: "Injects stylesheet rules dynamically into YouTube pages to completely mask recommendation columns and sidebar side-clips." }
+                { title: "Feed Blocking", text: "Uses Chrome's MutationObserver API to intercept and strip home feed recommendation elements before they can render." },
+                { title: "Intent Memory", text: "Persists the user's intent locally inside Chrome Storage Sync. Only allows searches matching semantic goal scopes." },
+                { title: "Clean View Mode", text: "Injects stylesheet rules dynamically into YouTube pages to completely mask recommendation columns and sidebar side-clips." }
             ]
         },
         features: {
-            mockupTitle: "YouTube Focus Shield UI",
+            mockupTitle: "Intent Tube — Active Shield",
             mockupHtml: `
-                <div class="feature-mockup-container mobile-style" style="max-width: 320px; margin: 0 auto;">
-                    <div class="mobile-frame">
-                        <div class="mobile-header">
-                            <span>YouTube Focus Popup</span>
-                        </div>
-                        <div class="mobile-body" style="padding: 1.5rem;">
-                            <div class="haven-chat-container" style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
-                                <div style="font-size: 2.2rem;">🛑</div>
-                                <h4 style="margin:0; font-family:var(--font-heading); text-align:center;">Goal Guard</h4>
-                                <div class="p-billing" id="hotspot-shield" style="width: 100%; border:1px solid var(--border-card); padding:0.75rem; border-radius:12px; background:rgba(0,0,0,0.02); display:flex; flex-direction:column; align-items:center; gap:0.25rem;">
-                                    <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Viewing Goal</div>
-                                    <div style="font-size:0.95rem; font-weight:600; margin-top:0.25rem; color:var(--text-main);">Learn React Hooks</div>
-                                </div>
-                                <div class="p-checkout" id="hotspot-wipe" style="width:100%;">
-                                    <button class="btn-apple-pay" style="background-color:var(--box-red-fg); color:#fff; width:100%; border:none; border-radius:9999px; padding:0.75rem; font-weight:600; cursor:pointer;">Modify Goal</button>
-                                </div>
+                <div class="it-features-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; padding:1.25rem; background:var(--bg-page); width:100%; box-sizing:border-box;">
+                    <div class="it-feat-card" id="hotspot-tablock" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🔒</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Tab Lock</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Focus Shield</div>
                             </div>
                         </div>
+                        <p style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin:0;">Prevents opening other tabs while a session is active. Every attempt to stray is blocked.</p>
+                        <div style="display:flex;align-items:center;gap:0.35rem;margin-top:auto;">
+                            <div style="width:8px;height:8px;border-radius:50%;background:#6366f1;animation:itPulse 2s ease-in-out infinite;"></div>
+                            <span style="font-size:0.68rem;color:#6366f1;font-weight:700;">ACTIVE</span>
+                        </div>
+                    </div>
+
+                    <div class="it-feat-card" id="hotspot-feedwipe" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ef4444,#f97316);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🧹</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Feed Wipe</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Zero Distractions</div>
+                            </div>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin:0;">Entire YouTube feed is wiped clean — no recommendations, no trending, no rabbit holes.</p>
+                        <div style="height:4px;border-radius:99px;background:rgba(239,68,68,0.15);overflow:hidden;margin-top:auto;">
+                            <div style="height:100%;width:100%;background:linear-gradient(90deg,#ef4444,#f97316);border-radius:99px;animation:itSweep 2.5s ease-in-out infinite;"></div>
+                        </div>
+                    </div>
+
+                    <div class="it-feat-card" id="hotspot-goalguard" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#10b981,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🎯</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Goal Guard</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Intent Filter</div>
+                            </div>
+                        </div>
+                        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:8px;padding:0.4rem 0.6rem;display:flex;align-items:center;gap:0.4rem;">
+                            <span style="font-size:0.65rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;">Goal:</span>
+                            <span style="font-size:0.75rem;font-weight:700;color:#10b981;">Learn React Hooks</span>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin:0;">Blocks any video that doesn't match your declared session goal. Stay on target.</p>
+                    </div>
+
+                    <div class="it-feat-card" id="hotspot-timer" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem 1.1rem 1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#fbbf24);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">⏱️</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Session Timer</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Auto-Ends</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:0.4rem;">
+                            <div style="flex:1;text-align:center;padding:0.3rem;border-radius:8px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);font-size:0.7rem;font-weight:700;color:#f59e0b;">15 min</div>
+                            <div style="flex:1;text-align:center;padding:0.3rem;border-radius:8px;background:rgba(245,158,11,0.9);font-size:0.7rem;font-weight:700;color:#fff;">30 min ✓</div>
+                            <div style="flex:1;text-align:center;padding:0.3rem;border-radius:8px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);font-size:0.7rem;font-weight:700;color:#f59e0b;">60 min</div>
+                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-muted);line-height:1.5;margin:0;">Sessions auto-end and log your progress. Tracks hours saved from distraction.</p>
                     </div>
                 </div>
+                <style>
+                @keyframes itPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+                @keyframes itSweep { 0%{transform:translateX(-100%)} 100%{transform:translateX(200%)} }
+                .it-feat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+                .it-feat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+                </style>
             `,
             hotspots: [
-                { x: 50, y: 30, title: "Extension Popup Trigger", desc: "A clean interface to input or edit your current session goal, keeping you accountable before searching." },
-                { x: 50, y: 65, title: "Session Guard Storage", desc: "Synchronizes the input text locally in your browser to maintain the search blocking scope." },
-                { x: 50, y: 80, title: "Modify Goal Action", desc: "Forces you to pause and re-declare your goal if you attempt to watch videos outside your original category." }
+                { x: 25, y: 27, title: "Tab Lock", desc: "When a session starts, the extension monitors chrome.tabs API events. Any attempt to open or switch to a non-YouTube tab triggers an immediate block notification." },
+                { x: 75, y: 27, title: "Home Feed Wipe", desc: "A MutationObserver content script fires on page load and surgically removes #contents, ytd-rich-grid-renderer, and sidebar recommendations before they render." },
+                { x: 25, y: 73, title: "Goal Guard", desc: "Each video's title and description is semantically compared to the stored goal string using a lightweight embedding check. Mismatches are blocked with a redirect prompt." },
+                { x: 75, y: 73, title: "Session Timer", desc: "Background Service Worker uses chrome.alarms API to fire at the chosen interval. On expiry, all IntentTube rules are disabled and a progress log entry is written to Chrome Storage." }
             ]
         },
         systemDesign: {

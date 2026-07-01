@@ -19,7 +19,6 @@
         <nav class="nav">
             <a href="#home" class="nav-link active" id="nav-home">Home</a>
             <a href="#problems" class="nav-link" id="nav-problems">Problems</a>
-            <a href="#about" class="nav-link" id="nav-about">About</a>
         </nav>
         <button class="btn btn-primary btn-contact" id="contact-me-btn">
             Contact Me 
@@ -34,14 +33,10 @@
     <main class="main-container">
         <!-- Left Column: Profile Card -->
         <section class="profile-section" id="home">
-            <div class="avatar-container">
-                <div class="avatar-wrapper">
-                    <img src="assets/avatar.png" alt="Shahith Kumar" class="avatar-img">
-                </div>
-            </div>
-
             <div class="profile-info">
-                <h1 class="profile-name">Shahith Kumar</h1>
+                <div class="profile-header">
+                    <h1 class="profile-name">Shahith Kumar</h1>
+                </div>
                 
 
 
@@ -61,60 +56,7 @@
                     </form>
                 </div>
 
-                <!-- Horizontal Checklist Progress Tracker -->
-                <div class="sidebar-widget-minimal">
-                    <div class="widget-title-minimal">
-                        <span>🔥 Progress (Week 1):</span>
-                    </div>
-                    <div class="horizontal-progress">
-                        <div class="progress-step done" title="Day 1 Problem">
-                            <span class="progress-check">✔</span>
-                            <span class="step-text">D1</span>
-                        </div>
-                        <div class="progress-step done" title="Day 2 Research">
-                            <span class="progress-check">✔</span>
-                            <span class="step-text">D2</span>
-                        </div>
-                        <div class="progress-step done" title="Day 3 Plan">
-                            <span class="progress-check">✔</span>
-                            <span class="step-text">D3</span>
-                        </div>
-                        <div class="progress-step active" title="Day 4 Build (Active)">
-                            <span class="progress-check">●</span>
-                            <span class="step-text">D4</span>
-                        </div>
-                        <div class="progress-step pending" title="Day 5 Improve">
-                            <span class="progress-check">○</span>
-                            <span class="step-text">D5</span>
-                        </div>
-                        <div class="progress-step pending" title="Day 6 Prepare">
-                            <span class="progress-check">○</span>
-                            <span class="step-text">D6</span>
-                        </div>
-                        <div class="progress-step pending" title="Day 7 Launch">
-                            <span class="progress-check">○</span>
-                            <span class="step-text">D7</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- About Me & Now Details Section -->
-                <div class="about-now-section">
-                    <h3 class="about-now-title">Currently ("Now")</h3>
-                    <div class="currently-building-widget">
-                        <div class="currently-building-header">
-                            <span class="pulse-dot-green"></span>
-                            <span class="currently-building-label">BUILDING THIS NOW</span>
-                        </div>
-                        <h4 class="currently-building-title">YouTube Focus</h4>
-                        <p class="currently-building-desc">A Chrome Extension that intercepts visits to YouTube, helping you stay focused by hiding recommendations.</p>
-                        <div class="currently-building-meta">
-                            <span>Week 1 Build</span>
-                            <span class="meta-dot">•</span>
-                            <a href="problem.html?id=7" class="currently-building-link">View Details →</a>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Social Links -->
                 <div class="social-links">
@@ -151,14 +93,8 @@
 
         <!-- Right Column: Documentary Hub & Projects Grid -->
         <section class="problems-section" id="problems">
-
-
             <!-- Header -->
-            <div class="problems-header" style="margin-top: 1.5rem;">
-                <div class="badge-title">
-                    <span class="badge-dot"></span>
-                    CHALLENGE SHIPS & ACTIVE BUILDS
-                </div>
+            <div class="problems-header" style="margin-top: 1.5rem; justify-content: flex-end;">
                 <a href="#problems" class="view-all-link">
                     View all builds
                     <svg class="link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -169,7 +105,7 @@
             </div>
 
             <div class="problems-grid">
-                <!-- Card 7: YouTube Focus (Active) -->
+                <!-- Card 7: Intent Tube (Active) -->
                 <a href="problem.html?id=7" class="problem-card-link">
                     <article class="problem-card theme-red" data-problem-id="7">
                         <div class="card-bg-dots"></div>
@@ -188,7 +124,7 @@
                                     <polyline points="12 6 12 12 16 14"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="card-product-name">YouTube Focus</h3>
+                            <h3 class="card-product-name">Intent Tube</h3>
                             <p class="card-product-tagline">Chrome Extension</p>
                             <div class="card-reddit-quote">
                                 "How do I stop wasting time on YouTube?"
@@ -200,7 +136,7 @@
                             </div>
                         </div>
                         <div class="card-presented-by">Day 4/7 • Click to follow →</div>
-                        <div class="card-website-url">youtube-focus.dev</div>
+                        <div class="card-website-url">intent-tube.dev</div>
                         <div class="card-version-label">In Progress</div>
                         <div class="card-right-sidebar">
                             <div class="card-search-icon">
