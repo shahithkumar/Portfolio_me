@@ -112,7 +112,6 @@ export const PROBLEM_DETAILS = {
             videoTitle: "JobFlow Walkthrough",
             videoDuration: "1:42",
             videoUrl: "REAL 2.mp4",
-            vimeoUrl: "https://player.vimeo.com/video/1206137702?autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
             explanationPoints: [
                 { title: "One-Click Sync", text: "Directly import repositories, commits, and packages from GitHub to build a dynamic skill index." },
                 { title: "AI-Powered Matching", text: "Matches students not on buzzwords, but on code patterns, complexity, and active developer habits." },
@@ -1128,7 +1127,6 @@ Most productivity tools fight this by locking you out. But people don't want to 
             videoTitle: "Intent Tube Demo",
             videoDuration: "1:02",
             videoUrl: "REAL 2.mp4",
-            vimeoUrl: "https://player.vimeo.com/video/1206137702?autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
             explanationPoints: [
                 { title: "Feed Blocking", text: "Uses Chrome's MutationObserver API to intercept and strip home feed recommendation elements before they can render." },
                 { title: "Intent Memory", text: "Persists the user's intent locally inside Chrome Storage Sync. Only allows searches matching semantic goal scopes." },
