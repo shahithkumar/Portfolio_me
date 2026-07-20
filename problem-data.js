@@ -1265,166 +1265,710 @@ Most productivity tools fight this by locking you out. But people don't want to 
             gif: "assets/GIF_RECALL.gif"
         },
         origin: {
-            story: `It all started with a simple Reddit question: "How do you actually stop forgetting everything you just read?" The more I read through the discussion, the more I realized I had the same problem. I was spending hours reading books, articles, and documentation, only to forget most of it weeks later. That made me ask a different question—not "How can I read more?" but "How can I remember more?" That question became the foundation of RECALL, a project built to help knowledge stay with you instead of slowly fading away.
-
-I realized that passive reading creates a dangerous illusion of mastery—"I saved it, so I know it." Traditional note systems list information linearly, completely obscuring prerequisite relationships, analogies, and critically, which memories are actively decaying according to human cognitive biology.
-
-That's why I created RECALL: an AI-powered Memory Operating System. Instead of flat static notes, RECALL ingests your study materials (PDFs, Web URLs, raw text notes) and projects them into a living 3D visual universe. Every atomic concept becomes an interactive star connected in a semantic relationship network (prerequisite_of, analogous_to, extends, part_of). Using cognitive science algorithms (FSRS & SuperMemo-2), stars dim and shift colors as memory fades (Aurora 🟢 ≥70%, Supernova 🟠 40-69%, Nova 🔴 <40%), triggering daily Memory Pulses and automated 3-Day Deep Assessment tests to keep your knowledge permanently crystallized.`,
+            story: `It all started with a simple Reddit question: "How do you actually stop forgetting everything you just read?" The more I read through the discussion, the more I realized I had the same problem. I was spending hours reading books, articles, and documentation, only to forget most of it weeks later. That made me ask a different question—not "How can I read more?" but "How can I remember more?" That question became the foundation of RECALL, a project built to help knowledge stay with you instead of slowly fading away.`,
             relevanceTitle: "Combating the Ebbinghaus Forgetting Curve with Spatial AI Cognition",
             relevanceText: `Hermann Ebbinghaus proved that human memory decays exponentially without active recall: over 50% of newly learned information is lost within 1 hour, and up to 80% vanishes within 48 hours.
 
 Generic study tools fail because flashcards operate in isolation without showing how concepts build upon one another, while document readers offer zero retention tracking.
 
 RECALL bridges this gap by combining 3D spatial visualization with modern Spaced Repetition (FSRS/SM-2) and vector embeddings (pgvector). Knowledge is transformed from dead text into an interconnected galaxy where concept centrality scales star size, memory health dictates brightness and color, review triggers a crystallization light burst effect, and comprehension is validated through deep multi-format testing.`,
-            milestones: [
-                {
-                    title: "📄 Document & Knowledge Ingestion Engine",
-                    text: "Built AI ingestion workers that parse study materials in various formats (PDFs, Web URLs, and raw text notes) into structured knowledge, breaking documents down into atomic Concepts."
-                },
-                {
-                    title: "🧠 AI Concept Extraction & Relationship Graph",
-                    text: "Engineered automated Concept Generator (key concepts, definitions, summaries), Flashcard Engine (auto Q&A generation), and Relationship Mapper linking concepts with semantic edges (prerequisite_of, analogous_to, extends, part_of)."
-                },
-                {
-                    title: "🌌 Interactive 3D Universe Visualization",
-                    text: "Rendered a living 3D starfield graph in React Three Fiber (R3F) / Three.js where Star Size scales by concept centrality, Star Brightness indicates memory score (0–100%), Color Coding marks health (🟢 Aurora ≥70%, 🟠 Supernova 40-69%, 🔴 Nova <40%), and Memory Pulse rings animate for items due today."
-                },
-                {
-                    title: "🔄 Spaced Repetition & Daily Review Loop",
-                    text: "Implemented SuperMemo-2 / FSRS cognitive scheduling algorithms with daily interactive flashcard reviews graded 0 to 5 on recall quality. Successful reviews trigger a visual light crystallization burst on the star."
-                },
-                {
-                    title: "📝 Topic Assessment Engine & Retention Tracking",
-                    text: "Created 3-day periodic AI evaluation workers generating recall, short-answer, and applied scenario assessments to evaluate deep understanding and track long-term mastery history over time."
-                }
-            ],
-            stats: [
-                { label: "Concept Retention Rate", value: "92%", percentage: 92 },
-                { label: "Active Recall Acceleration", value: "3.5x", percentage: 88 },
-                { label: "Forgetting Curve Decay Offset", value: "80%", percentage: 80 }
-            ]
+            milestones: [],
+            stats: []
         },
         usage: {
             browserTitle: "RECALL — 3D Memory Operating System",
             pages: [
                 {
-                    title: "Main Dashboard (/dashboard)",
-                    url: "recall.app/dashboard",
-                    description: "How to use: Track daily streaks, review quick stats, see recent memory uploads, and jump directly into active review sessions.",
-                    contentHtml: `
-                        <div class="rc-screenshot-wrapper">
-                            <img src="assets/recall-dashboard.png" alt="Main Dashboard (/dashboard)" class="rc-screenshot-img" />
-                        </div>
-                    `
-                },
-                {
-                    title: "Upload & Capture Page (/dashboard/upload)",
+                    title: "📄 Document & Knowledge Ingestion",
                     url: "recall.app/dashboard/upload",
-                    description: "How to use: Drag & drop PDFs, text files, or paste URLs to automatically parse and index them into your memory vault.",
+                    description: "Drag & drop PDFs, Web URLs, or raw text notes. AI background workers extract structured knowledge and atomize documents into interconnected concepts with semantic embeddings.",
                     contentHtml: `
-                        <div class="rc-screenshot-wrapper">
-                            <img src="assets/recall-upload.png" alt="Upload & Capture Page (/dashboard/upload)" class="rc-screenshot-img" />
+                        <div class="rc-dashboard-wrapper" style="padding:0.75rem; min-height:340px; font-size:0.78rem;">
+                          <!-- Topbar -->
+                          <div class="rc-topbar" style="padding-bottom:0.6rem; margin-bottom:0.75rem;">
+                            <div class="rc-topbar-left">
+                              <div class="rc-brand-badge">★</div>
+                              <div class="rc-brand-text"><span class="rc-b-title">RECALL</span><span class="rc-b-sub">MEMORY OS</span></div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.5rem;">
+                              <span style="background:rgba(0,217,196,0.12);color:#00D9C4;border:1px solid rgba(0,217,196,0.3);padding:0.2rem 0.55rem;border-radius:10px;font-size:0.6rem;font-weight:700;">📄 Upload</span>
+                              <div class="rc-user-pill" style="width:22px;height:22px;"><div class="rc-avatar-yellow" style="width:22px;height:22px;font-size:0.6rem;">S</div></div>
+                            </div>
+                          </div>
+
+                          <!-- Upload Zone -->
+                          <div id="rc-upload-zone" style="border:2px dashed rgba(0,217,196,0.35);border-radius:12px;padding:1.2rem 1rem;text-align:center;cursor:pointer;background:rgba(0,217,196,0.04);transition:all 0.3s ease;margin-bottom:0.75rem;" onclick="rcSimulateUpload(this)">
+                            <div style="font-size:1.6rem;margin-bottom:0.4rem;">📁</div>
+                            <div style="color:#E8F4FD;font-weight:700;font-size:0.82rem;margin-bottom:0.25rem;">Drop PDFs, URLs or Text Notes here</div>
+                            <div style="color:#8BA3C7;font-size:0.65rem;">Click to simulate ingestion • Supports PDF, URL, .txt, .md</div>
+                            <div style="display:flex;gap:0.4rem;justify-content:center;margin-top:0.6rem;flex-wrap:wrap;">
+                              <span style="background:#0F1629;border:1px solid rgba(255,255,255,0.1);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.58rem;color:#8BA3C7;">📄 PDF</span>
+                              <span style="background:#0F1629;border:1px solid rgba(255,255,255,0.1);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.58rem;color:#8BA3C7;">🌐 URL</span>
+                              <span style="background:#0F1629;border:1px solid rgba(255,255,255,0.1);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.58rem;color:#8BA3C7;">📝 Text</span>
+                            </div>
+                          </div>
+
+                          <!-- AI Processing Pipeline (hidden initially) -->
+                          <div id="rc-pipeline-steps" style="display:none;flex-direction:column;gap:0.45rem;margin-bottom:0.75rem;">
+                            <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.5px;color:#8BA3C7;margin-bottom:0.15rem;">AI INGESTION PIPELINE</div>
+                            <div class="rc-pipe-step" id="rcp-1" style="display:flex;align-items:center;gap:0.5rem;background:#0F1629;border-radius:8px;padding:0.45rem 0.65rem;border:1px solid rgba(255,255,255,0.06);">
+                              <div class="rc-pipe-dot" style="width:8px;height:8px;border-radius:50%;background:#F5A623;animation:rcPulse 1s infinite;"></div>
+                              <span style="color:#E8F4FD;font-size:0.72rem;flex:1;">📖 Parsing document structure & extracting text...</span>
+                              <span style="color:#F5A623;font-size:0.6rem;font-weight:700;">RUNNING</span>
+                            </div>
+                            <div class="rc-pipe-step" id="rcp-2" style="display:flex;align-items:center;gap:0.5rem;background:#0F1629;border-radius:8px;padding:0.45rem 0.65rem;border:1px solid rgba(255,255,255,0.06);opacity:0.4;">
+                              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);"></div>
+                              <span style="color:#8BA3C7;font-size:0.72rem;flex:1;">🧠 AI Concept Extractor → Generating atomic concepts & definitions...</span>
+                              <span style="color:#8BA3C7;font-size:0.6rem;font-weight:700;">QUEUED</span>
+                            </div>
+                            <div class="rc-pipe-step" id="rcp-3" style="display:flex;align-items:center;gap:0.5rem;background:#0F1629;border-radius:8px;padding:0.45rem 0.65rem;border:1px solid rgba(255,255,255,0.06);opacity:0.4;">
+                              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);"></div>
+                              <span style="color:#8BA3C7;font-size:0.72rem;flex:1;">🔗 Relationship Mapper → Building semantic edges (prerequisite_of, analogous_to)...</span>
+                              <span style="color:#8BA3C7;font-size:0.6rem;font-weight:700;">QUEUED</span>
+                            </div>
+                            <div class="rc-pipe-step" id="rcp-4" style="display:flex;align-items:center;gap:0.5rem;background:#0F1629;border-radius:8px;padding:0.45rem 0.65rem;border:1px solid rgba(255,255,255,0.06);opacity:0.4;">
+                              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);"></div>
+                              <span style="color:#8BA3C7;font-size:0.72rem;flex:1;">⚡ Flashcard Engine → Auto-generating Q&A pairs for each concept...</span>
+                              <span style="color:#8BA3C7;font-size:0.6rem;font-weight:700;">QUEUED</span>
+                            </div>
+                            <div class="rc-pipe-step" id="rcp-5" style="display:flex;align-items:center;gap:0.5rem;background:#0F1629;border-radius:8px;padding:0.45rem 0.65rem;border:1px solid rgba(255,255,255,0.06);opacity:0.4;">
+                              <div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);"></div>
+                              <span style="color:#8BA3C7;font-size:0.72rem;flex:1;">📊 pgvector → Embedding 1536-dim vectors into knowledge universe...</span>
+                              <span style="color:#8BA3C7;font-size:0.6rem;font-weight:700;">QUEUED</span>
+                            </div>
+                          </div>
+
+                          <!-- Result Cards (hidden initially) -->
+                          <div id="rc-ingestion-results" style="display:none;">
+                            <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.5px;color:#8BA3C7;margin-bottom:0.4rem;">✅ INGESTION COMPLETE — 3 CONCEPTS EXTRACTED</div>
+                            <div style="display:flex;flex-direction:column;gap:0.35rem;">
+                              <div style="background:rgba(0,217,196,0.06);border:1px solid rgba(0,217,196,0.25);border-radius:8px;padding:0.5rem 0.65rem;display:flex;align-items:center;justify-content:space-between;">
+                                <div>
+                                  <div style="color:#E8F4FD;font-weight:700;font-size:0.72rem;margin-bottom:0.1rem;">Ebbinghaus Forgetting Curve</div>
+                                  <div style="color:#8BA3C7;font-size:0.6rem;">prerequisite_of → Spaced Repetition</div>
+                                </div>
+                                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                                  <span style="background:rgba(0,217,196,0.15);color:#00D9C4;padding:0.1rem 0.35rem;border-radius:4px;font-size:0.55rem;font-weight:700;">🟢 Aurora</span>
+                                  <span style="color:#8BA3C7;font-size:0.55rem;">⚡ 4 flashcards</span>
+                                </div>
+                              </div>
+                              <div style="background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:0.5rem 0.65rem;display:flex;align-items:center;justify-content:space-between;">
+                                <div>
+                                  <div style="color:#E8F4FD;font-weight:700;font-size:0.72rem;margin-bottom:0.1rem;">Active Recall Mechanism</div>
+                                  <div style="color:#8BA3C7;font-size:0.6rem;">extends → Interleaved Practice</div>
+                                </div>
+                                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                                  <span style="background:rgba(245,166,35,0.15);color:#F5A623;padding:0.1rem 0.35rem;border-radius:4px;font-size:0.55rem;font-weight:700;">🟠 Supernova</span>
+                                  <span style="color:#8BA3C7;font-size:0.55rem;">⚡ 3 flashcards</span>
+                                </div>
+                              </div>
+                              <div style="background:rgba(255,107,157,0.06);border:1px solid rgba(255,107,157,0.2);border-radius:8px;padding:0.5rem 0.65rem;display:flex;align-items:center;justify-content:space-between;">
+                                <div>
+                                  <div style="color:#E8F4FD;font-weight:700;font-size:0.72rem;margin-bottom:0.1rem;">Memory Consolidation</div>
+                                  <div style="color:#8BA3C7;font-size:0.6rem;">analogous_to → Sleep Replay</div>
+                                </div>
+                                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;">
+                                  <span style="background:rgba(255,107,157,0.15);color:#FF6B9D;padding:0.1rem 0.35rem;border-radius:4px;font-size:0.55rem;font-weight:700;">🔴 Nova</span>
+                                  <span style="color:#8BA3C7;font-size:0.55rem;">⚡ 5 flashcards</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <style>
+                          @keyframes rcPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+                          #rc-upload-zone:hover { border-color:rgba(0,217,196,0.7); background:rgba(0,217,196,0.08); transform:scale(1.01); }
+                          </style>
+                          <script>
+                          function rcSimulateUpload(zone) {
+                            if(zone.dataset.done) return;
+                            zone.dataset.done='1';
+                            zone.innerHTML='<div style="font-size:1.6rem">⏳</div><div style="color:#F5A623;font-weight:700;font-size:0.82rem;margin-top:0.4rem;">Processing: "The_Science_of_Memory.pdf"...</div>';
+                            zone.style.borderColor='rgba(245,166,35,0.6)';
+                            document.getElementById('rc-pipeline-steps').style.display='flex';
+                            const steps=['rcp-1','rcp-2','rcp-3','rcp-4','rcp-5'];
+                            const labels=['RUNNING','RUNNING','RUNNING','RUNNING','DONE'];
+                            const colors=['#F5A623','#F5A623','#F5A623','#F5A623','#00D9C4'];
+                            steps.forEach((id,i)=>{
+                              setTimeout(()=>{
+                                const el=document.getElementById(id);
+                                el.style.opacity='1';
+                                el.querySelector('.rc-pipe-dot,div').style.background=colors[i];
+                                el.querySelector('span:last-child').textContent=labels[i];
+                                el.querySelector('span:last-child').style.color=colors[i];
+                                if(i===steps.length-1){
+                                  setTimeout(()=>{
+                                    zone.innerHTML='<div style="font-size:1.6rem">✅</div><div style="color:#00D9C4;font-weight:700;margin-top:0.4rem;">Ingested! 3 concepts extracted.</div>';
+                                    zone.style.borderColor='rgba(0,217,196,0.6)';
+                                    zone.style.background='rgba(0,217,196,0.06)';
+                                    document.getElementById('rc-pipeline-steps').style.display='none';
+                                    document.getElementById('rc-ingestion-results').style.display='block';
+                                  },600);
+                                }
+                              },i*800+200);
+                            });
+                          }
+                          </script>
                         </div>
                     `
                 },
                 {
-                    title: "Search & Query Page (/dashboard/search)",
-                    url: "recall.app/dashboard/search",
-                    description: "How to use: Type any query to perform hybrid keyword & semantic AI search across all your saved documents and notes.",
+                    title: "🧠 AI Concept Extraction & Relationship Graph",
+                    url: "recall.app/dashboard/concepts",
+                    description: "AI automatically identifies key concepts, definitions, and summaries, then links them with semantic edges (prerequisite_of, analogous_to, extends, part_of) and generates Q&A flashcards for each concept.",
                     contentHtml: `
-                        <div class="rc-page-container">
-                            <div class="rc-page-header">
-                                <h1 class="rc-ph-title">Search & Semantic AI Query</h1>
-                                <p class="rc-ph-desc">Type any query to perform hybrid keyword & semantic AI search across all your saved documents and notes.</p>
+                        <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
+                          <!-- Topbar -->
+                          <div class="rc-topbar" style="padding-bottom:0.6rem;margin-bottom:0.75rem;">
+                            <div class="rc-topbar-left">
+                              <div class="rc-brand-badge">★</div>
+                              <div class="rc-brand-text"><span class="rc-b-title">RECALL</span><span class="rc-b-sub">CONCEPTS</span></div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.4rem;">
+                              <span style="background:rgba(0,217,196,0.12);color:#00D9C4;border:1px solid rgba(0,217,196,0.3);padding:0.2rem 0.55rem;border-radius:10px;font-size:0.6rem;font-weight:700;">142 concepts</span>
+                            </div>
+                          </div>
+
+                          <!-- Concept Cards with Relationship Edges -->
+                          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+
+                            <!-- Concept 1 (active/expanded) -->
+                            <div id="rc-concept-1" style="background:#0F1629;border:1.5px solid rgba(0,217,196,0.4);border-radius:10px;padding:0.65rem 0.75rem;cursor:pointer;transition:all 0.25s ease;" onclick="rcToggleConcept('1')">
+                              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+                                <div style="display:flex;align-items:center;gap:0.5rem;">
+                                  <div style="width:8px;height:8px;border-radius:50%;background:#00D9C4;box-shadow:0 0 8px #00D9C4;"></div>
+                                  <span style="color:#E8F4FD;font-weight:700;font-size:0.8rem;">Ebbinghaus Forgetting Curve</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:0.4rem;">
+                                  <span style="background:rgba(0,217,196,0.15);color:#00D9C4;padding:0.1rem 0.4rem;border-radius:4px;font-size:0.55rem;font-weight:800;">🟢 95%</span>
+                                  <span id="rc-c1-arrow" style="color:#8BA3C7;font-size:0.65rem;transition:transform 0.2s;">▼</span>
+                                </div>
+                              </div>
+                              <div id="rc-c1-body" style="overflow:hidden;transition:max-height 0.35s ease;max-height:200px;">
+                                <div style="color:#8BA3C7;font-size:0.7rem;line-height:1.45;margin-bottom:0.5rem;">Hermann Ebbinghaus (1885): Memory retention decays exponentially over time. Without active recall, over 50% of new information is lost within 1 hour, and 80% within 48 hours.</div>
+                                <!-- Relationship edges -->
+                                <div style="display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.55rem;">
+                                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.62rem;">
+                                    <span style="color:#F5A623;font-weight:700;">prerequisite_of</span>
+                                    <span style="color:#8BA3C7;">→</span>
+                                    <span style="background:rgba(245,166,35,0.12);color:#F5A623;padding:0.08rem 0.35rem;border-radius:4px;border:1px solid rgba(245,166,35,0.25);">Spaced Repetition</span>
+                                  </div>
+                                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.62rem;">
+                                    <span style="color:#00D9C4;font-weight:700;">analogous_to</span>
+                                    <span style="color:#8BA3C7;">→</span>
+                                    <span style="background:rgba(0,217,196,0.1);color:#00D9C4;padding:0.08rem 0.35rem;border-radius:4px;border:1px solid rgba(0,217,196,0.25);">Cache Eviction in Redis</span>
+                                  </div>
+                                </div>
+                                <!-- Flashcard preview -->
+                                <div style="background:#080B14;border:1px solid rgba(0,217,196,0.2);border-radius:7px;padding:0.45rem 0.6rem;">
+                                  <div style="font-size:0.58rem;font-weight:800;letter-spacing:0.4px;color:#00D9C4;margin-bottom:0.25rem;">⚡ FLASHCARD #01</div>
+                                  <div style="color:#E8F4FD;font-size:0.7rem;font-weight:600;margin-bottom:0.25rem;">Q: What % of information is lost within 48 hours without active recall?</div>
+                                  <div style="color:#8BA3C7;font-size:0.65rem;">A: ~80% — as shown by Ebbinghaus (1885) exponential decay curve</div>
+                                </div>
+                              </div>
                             </div>
 
-                            <div class="rc-search-hero-box">
-                                <div class="rc-sh-input-wrapper">
-                                    <span class="rc-sh-icon">🔍</span>
-                                    <input type="text" class="rc-sh-input" value="Raft consensus algorithm majority quorum invariant" placeholder="Search concepts, documents, notes..." />
-                                    <span class="rc-sh-badge">⌘K</span>
+                            <!-- Concept 2 (collapsed) -->
+                            <div id="rc-concept-2" style="background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.65rem 0.75rem;cursor:pointer;transition:all 0.25s ease;" onclick="rcToggleConcept('2')">
+                              <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <div style="display:flex;align-items:center;gap:0.5rem;">
+                                  <div style="width:8px;height:8px;border-radius:50%;background:#F5A623;box-shadow:0 0 6px #F5A623;"></div>
+                                  <span style="color:#E8F4FD;font-weight:700;font-size:0.8rem;">Spaced Repetition (SM-2 / FSRS)</span>
                                 </div>
-
-                                <div class="rc-filter-pills">
-                                    <span class="rc-fp-pill active">All Results (24)</span>
-                                    <span class="rc-fp-pill">🧠 Concepts (142)</span>
-                                    <span class="rc-fp-pill">📄 Documents (24)</span>
-                                    <span class="rc-fp-pill">⚡ Flashcards (89)</span>
-                                    <span class="rc-fp-pill pgvector">pgvector 1536-dim Hybrid</span>
+                                <div style="display:flex;align-items:center;gap:0.4rem;">
+                                  <span style="background:rgba(245,166,35,0.15);color:#F5A623;padding:0.1rem 0.4rem;border-radius:4px;font-size:0.55rem;font-weight:800;">🟠 62%</span>
+                                  <span id="rc-c2-arrow" style="color:#8BA3C7;font-size:0.65rem;transition:transform 0.2s;">▶</span>
                                 </div>
-
-                                <div class="rc-search-results-list">
-                                    <div class="rc-sr-card highlighted">
-                                        <div class="rc-sr-header">
-                                            <span class="rc-sr-title">Raft Consensus Protocol</span>
-                                            <span class="rc-sr-score">98.4% Semantic Similarity</span>
-                                        </div>
-                                        <p class="rc-sr-snippet">...requires votes from a strict majority (<strong>N/2 + 1</strong>) of cluster nodes to guarantee a single leader per election term and ensure state machine safety under network partitions.</p>
-                                        <div class="rc-sr-tags">
-                                            <span class="rc-sr-tag prerequisite">⚡ prerequisite_of: Leader Election</span>
-                                            <span class="rc-sr-tag analogous">🔗 analogous_to: Paxos</span>
-                                            <span class="rc-sr-tag active">🟢 Aurora (95% Retention)</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="rc-sr-card">
-                                        <div class="rc-sr-header">
-                                            <span class="rc-sr-title">React Server Components (RSC)</span>
-                                            <span class="rc-sr-score">94.1% Semantic Similarity</span>
-                                        </div>
-                                        <p class="rc-sr-snippet">...components rendered solely on the server to optimize loading performance, eliminate client bundle overhead, and execute data fetching without waterfall requests.</p>
-                                        <div class="rc-sr-tags">
-                                            <span class="rc-sr-tag">Flashcard #04</span>
-                                            <span class="rc-sr-tag active">🟢 Aurora (91% Retention)</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="rc-sr-card">
-                                        <div class="rc-sr-header">
-                                            <span class="rc-sr-title">SuperMemo-2 / FSRS Memory Scheduling</span>
-                                            <span class="rc-sr-score">89.7% Semantic Similarity</span>
-                                        </div>
-                                        <p class="rc-sr-snippet">...spaced repetition engine adjusting memory stability and retrievability based on recall quality grades (0 to 5) to combat the Ebbinghaus forgetting curve.</p>
-                                        <div class="rc-sr-tags">
-                                            <span class="rc-sr-tag">Algorithm</span>
-                                            <span class="rc-sr-tag warning">🟠 Supernova (58% Retention)</span>
-                                        </div>
-                                    </div>
+                              </div>
+                              <div id="rc-c2-body" style="overflow:hidden;transition:max-height 0.35s ease;max-height:0px;">
+                                <div style="margin-top:0.5rem;color:#8BA3C7;font-size:0.7rem;line-height:1.45;margin-bottom:0.5rem;">Cognitive scheduling algorithm that spaces review intervals based on memory strength. Each successful recall extends the next review interval exponentially (stability × retrievability).</div>
+                                <div style="display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.5rem;">
+                                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.62rem;">
+                                    <span style="color:#A78BFA;font-weight:700;">extends</span>
+                                    <span style="color:#8BA3C7;">→</span>
+                                    <span style="background:rgba(167,139,250,0.12);color:#A78BFA;padding:0.08rem 0.35rem;border-radius:4px;border:1px solid rgba(167,139,250,0.25);">Active Recall</span>
+                                  </div>
+                                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.62rem;">
+                                    <span style="color:#FF6B9D;font-weight:700;">part_of</span>
+                                    <span style="color:#8BA3C7;">→</span>
+                                    <span style="background:rgba(255,107,157,0.12);color:#FF6B9D;padding:0.08rem 0.35rem;border-radius:4px;border:1px solid rgba(255,107,157,0.25);">RECALL Review Engine</span>
+                                  </div>
                                 </div>
+                                <div style="background:#080B14;border:1px solid rgba(245,166,35,0.2);border-radius:7px;padding:0.45rem 0.6rem;">
+                                  <div style="font-size:0.58rem;font-weight:800;letter-spacing:0.4px;color:#F5A623;margin-bottom:0.25rem;">⚡ FLASHCARD #02</div>
+                                  <div style="color:#E8F4FD;font-size:0.7rem;font-weight:600;margin-bottom:0.25rem;">Q: How does SM-2 determine the next review interval?</div>
+                                  <div style="color:#8BA3C7;font-size:0.65rem;">A: New interval = previous interval × ease factor (default 2.5), adjusted by recall quality (0-5)</div>
+                                </div>
+                              </div>
                             </div>
+
+                            <!-- Concept 3 (collapsed) -->
+                            <div id="rc-concept-3" style="background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.65rem 0.75rem;cursor:pointer;transition:all 0.25s ease;" onclick="rcToggleConcept('3')">
+                              <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <div style="display:flex;align-items:center;gap:0.5rem;">
+                                  <div style="width:8px;height:8px;border-radius:50%;background:#FF6B9D;box-shadow:0 0 6px #FF6B9D;"></div>
+                                  <span style="color:#E8F4FD;font-weight:700;font-size:0.8rem;">Memory Consolidation</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:0.4rem;">
+                                  <span style="background:rgba(255,107,157,0.15);color:#FF6B9D;padding:0.1rem 0.4rem;border-radius:4px;font-size:0.55rem;font-weight:800;">🔴 28%</span>
+                                  <span id="rc-c3-arrow" style="color:#8BA3C7;font-size:0.65rem;transition:transform 0.2s;">▶</span>
+                                </div>
+                              </div>
+                              <div id="rc-c3-body" style="overflow:hidden;transition:max-height 0.35s ease;max-height:0px;">
+                                <div style="margin-top:0.5rem;color:#8BA3C7;font-size:0.7rem;line-height:1.45;margin-bottom:0.5rem;">The neural process by which newly acquired information is stabilized in long-term memory, primarily occurring during sleep through hippocampal replay and synaptic consolidation.</div>
+                                <div style="display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.5rem;">
+                                  <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.62rem;">
+                                    <span style="color:#00D9C4;font-weight:700;">analogous_to</span>
+                                    <span style="color:#8BA3C7;">→</span>
+                                    <span style="background:rgba(0,217,196,0.1);color:#00D9C4;padding:0.08rem 0.35rem;border-radius:4px;border:1px solid rgba(0,217,196,0.25);">Write-behind Cache</span>
+                                  </div>
+                                </div>
+                                <div style="background:#080B14;border:1px solid rgba(255,107,157,0.2);border-radius:7px;padding:0.45rem 0.6rem;">
+                                  <div style="font-size:0.58rem;font-weight:800;letter-spacing:0.4px;color:#FF6B9D;margin-bottom:0.25rem;">⚡ FLASHCARD #03 — DUE TODAY</div>
+                                  <div style="color:#E8F4FD;font-size:0.7rem;font-weight:600;margin-bottom:0.25rem;">Q: What brain region drives memory consolidation during sleep?</div>
+                                  <div style="color:#8BA3C7;font-size:0.65rem;">A: The hippocampus — replays experiences during slow-wave sleep to transfer to neocortex</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <script>
+                          function rcToggleConcept(id) {
+                            const body = document.getElementById('rc-c'+id+'-body');
+                            const arrow = document.getElementById('rc-c'+id+'-arrow');
+                            const card = document.getElementById('rc-concept-'+id);
+                            const isOpen = body.style.maxHeight !== '0px' && body.style.maxHeight !== '';
+                            // Close all
+                            ['1','2','3'].forEach(i => {
+                              const b = document.getElementById('rc-c'+i+'-body');
+                              const a = document.getElementById('rc-c'+i+'-arrow');
+                              const c = document.getElementById('rc-concept-'+i);
+                              b.style.maxHeight = '0px';
+                              a.textContent = '▶';
+                              c.style.borderColor = 'rgba(255,255,255,0.08)';
+                            });
+                            if (!isOpen) {
+                              body.style.maxHeight = '300px';
+                              arrow.textContent = '▼';
+                              card.style.borderColor = id==='1'?'rgba(0,217,196,0.4)':id==='2'?'rgba(245,166,35,0.4)':'rgba(255,107,157,0.4)';
+                            }
+                          }
+                          </script>
                         </div>
                     `
                 },
                 {
-                    title: "Spaced Repetition Review Page (/dashboard/review)",
-                    url: "recall.app/dashboard/review",
-                    description: "How to use: Flip through AI-generated flashcards daily and rate card difficulty to schedule optimal review intervals.",
-                    contentHtml: `
-                        <div class="rc-screenshot-wrapper">
-                            <img src="assets/recall-review.png" alt="Spaced Repetition Review Page (/dashboard/review)" class="rc-screenshot-img" />
-                        </div>
-                    `
-                },
-                {
-                    title: "Knowledge Universe (3D Graph) (/dashboard/universe)",
+                    title: "🌌 Interactive 3D Knowledge Universe",
                     url: "recall.app/dashboard/universe",
-                    description: "How to use: Explore interactive 3D nodes of your knowledge base to visualize connected topics, ideas, and memories.",
+                    description: "Visualizes your knowledge as a living galaxy. Star Size = concept centrality. Star Brightness = memory score. 🟢 Aurora (≥70%), 🟠 Supernova (40–69%), 🔴 Nova (<40%). Pulsing rings = due for review today.",
                     contentHtml: `
-                        <div class="rc-screenshot-wrapper">
-                            <img src="assets/recall-universe.png" alt="Knowledge Universe (3D Graph) (/dashboard/universe)" class="rc-screenshot-img" />
+                        <div style="background:#04060C;border-radius:12px;min-height:340px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;font-size:0.78rem;">
+                          <!-- Topbar -->
+                          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;border-bottom:1px solid rgba(255,255,255,0.06);position:relative;z-index:10;">
+                            <div style="display:flex;align-items:center;gap:0.5rem;">
+                              <div style="width:8px;height:8px;border-radius:50%;background:#00D9C4;box-shadow:0 0 8px #00D9C4;animation:rcPulse 2s infinite;"></div>
+                              <span style="color:#E8F4FD;font-weight:800;font-size:0.78rem;letter-spacing:0.5px;">KNOWLEDGE UNIVERSE</span>
+                            </div>
+                            <div style="display:flex;gap:0.4rem;">
+                              <span style="background:rgba(0,217,196,0.1);color:#00D9C4;border:1px solid rgba(0,217,196,0.25);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.58rem;font-weight:700;">142 Stars</span>
+                              <span style="background:rgba(255,255,255,0.06);color:#8BA3C7;border:1px solid rgba(255,255,255,0.1);padding:0.15rem 0.5rem;border-radius:6px;font-size:0.58rem;">3D Mode</span>
+                            </div>
+                          </div>
+
+                          <!-- Canvas -->
+                          <canvas id="rc-universe-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+
+                          <!-- Tooltip -->
+                          <div id="rc-star-tooltip" style="display:none;position:absolute;background:rgba(8,11,20,0.95);border:1px solid rgba(0,217,196,0.35);border-radius:10px;padding:0.6rem 0.85rem;font-size:0.68rem;color:#E8F4FD;pointer-events:none;z-index:20;min-width:150px;max-width:200px;backdrop-filter:blur(8px);">
+                            <div id="rc-tt-name" style="font-weight:800;margin-bottom:0.25rem;"></div>
+                            <div id="rc-tt-score" style="margin-bottom:0.15rem;"></div>
+                            <div id="rc-tt-edges" style="color:#8BA3C7;font-size:0.6rem;"></div>
+                          </div>
+
+                          <!-- Legend -->
+                          <div style="position:absolute;bottom:0.75rem;left:0.85rem;background:rgba(8,11,20,0.9);border:1px solid rgba(0,217,196,0.2);border-radius:10px;padding:0.6rem 0.85rem;z-index:10;backdrop-filter:blur(8px);">
+                            <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.4px;color:#E8F4FD;margin-bottom:0.3rem;">MEMORY HEALTH</div>
+                            <div style="display:flex;flex-direction:column;gap:0.2rem;">
+                              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.6rem;color:#8BA3C7;"><div style="width:8px;height:8px;border-radius:50%;background:#00D9C4;box-shadow:0 0 5px #00D9C4;"></div> 🟢 Aurora ≥70%</div>
+                              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.6rem;color:#8BA3C7;"><div style="width:8px;height:8px;border-radius:50%;background:#F5A623;box-shadow:0 0 5px #F5A623;"></div> 🟠 Supernova 40–69%</div>
+                              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.6rem;color:#8BA3C7;"><div style="width:8px;height:8px;border-radius:50%;background:#FF6B9D;box-shadow:0 0 5px #FF6B9D;"></div> 🔴 Nova &lt;40%</div>
+                              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.6rem;color:#8BA3C7;"><div style="width:10px;height:10px;border-radius:50%;border:1.5px solid #00D9C4;animation:pulseRing 2s infinite;"></div> Memory Pulse = Due today</div>
+                            </div>
+                          </div>
+
+                          <!-- Info hint -->
+                          <div style="position:absolute;bottom:0.75rem;right:0.85rem;color:#8BA3C7;font-size:0.58rem;background:rgba(8,11,20,0.85);padding:0.3rem 0.5rem;border-radius:6px;z-index:10;">Hover stars to inspect</div>
+
+                          <script>
+                          (function(){
+                            const canvas = document.getElementById('rc-universe-canvas');
+                            if(!canvas) return;
+                            const ctx = canvas.getContext('2d');
+                            const concepts = [
+                              {name:'Ebbinghaus Curve',score:95,edges:4,x:0.35,y:0.42,color:'#00D9C4',pulse:false},
+                              {name:'Spaced Repetition',score:62,edges:6,x:0.55,y:0.35,color:'#F5A623',pulse:true},
+                              {name:'Memory Consolidation',score:28,edges:2,x:0.65,y:0.60,color:'#FF6B9D',pulse:true},
+                              {name:'Active Recall',score:81,edges:5,x:0.28,y:0.62,color:'#00D9C4',pulse:false},
+                              {name:'FSRS Algorithm',score:55,edges:3,x:0.72,y:0.42,color:'#F5A623',pulse:false},
+                              {name:'Raft Consensus',score:89,edges:7,x:0.18,y:0.30,color:'#00D9C4',pulse:false},
+                              {name:'React Server Comps',score:91,edges:4,x:0.82,y:0.28,color:'#00D9C4',pulse:false},
+                              {name:'pgvector Embeddings',score:44,edges:3,x:0.50,y:0.70,color:'#F5A623',pulse:true},
+                              {name:'Leader Election',score:78,edges:5,x:0.15,y:0.55,color:'#00D9C4',pulse:false},
+                              {name:'Sleep Replay',score:35,edges:2,x:0.78,y:0.68,color:'#FF6B9D',pulse:true},
+                              {name:'Cache Eviction',score:72,edges:3,x:0.42,y:0.22,color:'#00D9C4',pulse:false},
+                              {name:'Interleaved Practice',score:48,edges:4,x:0.60,y:0.80,color:'#F5A623',pulse:false},
+                              {name:'Next.js App Router',score:95,edges:6,x:0.88,y:0.48,color:'#00D9C4',pulse:false},
+                              {name:'WebSocket Gateway',score:30,edges:2,x:0.25,y:0.78,color:'#FF6B9D',pulse:true},
+                              {name:'BullMQ Queues',score:66,edges:3,x:0.12,y:0.42,color:'#F5A623',pulse:false},
+                            ];
+                            const edges = [
+                              [0,1],[0,3],[1,4],[1,2],[2,9],[3,7],[4,5],[5,8],[6,12],[7,11],[8,14],[9,10],[10,0],[11,1],[12,6]
+                            ];
+                            let W,H,animFrame,pulseT=0,mouseX=-999,mouseY=-999,hoveredIdx=-1;
+                            function resize(){
+                              const rect=canvas.parentElement.getBoundingClientRect();
+                              W=canvas.width=rect.width;
+                              H=canvas.height=rect.height;
+                            }
+                            resize();
+                            window.addEventListener('resize',resize);
+                            canvas.addEventListener('mousemove',function(e){
+                              const rect=canvas.getBoundingClientRect();
+                              mouseX=e.clientX-rect.left;
+                              mouseY=e.clientY-rect.top;
+                            });
+                            canvas.addEventListener('mouseleave',function(){
+                              mouseX=-999;mouseY=-999;hoveredIdx=-1;
+                              document.getElementById('rc-star-tooltip').style.display='none';
+                            });
+                            function getPos(c){return{x:c.x*W,y:c.y*H};}
+                            function getRadius(c){return 4+c.edges*1.1;}
+                            function draw(){
+                              pulseT+=0.03;
+                              ctx.clearRect(0,0,W,H);
+                              // Draw background stars (tiny)
+                              ctx.fillStyle='rgba(255,255,255,0.3)';
+                              for(let i=0;i<60;i++){
+                                const sx=((i*137+17)%100)/100*W;
+                                const sy=((i*79+31)%100)/100*H;
+                                ctx.beginPath();ctx.arc(sx,sy,0.6,0,Math.PI*2);ctx.fill();
+                              }
+                              // Draw edges
+                              edges.forEach(([a,b])=>{
+                                const pa=getPos(concepts[a]),pb=getPos(concepts[b]);
+                                ctx.beginPath();ctx.moveTo(pa.x,pa.y);ctx.lineTo(pb.x,pb.y);
+                                ctx.strokeStyle='rgba(0,217,196,0.12)';ctx.lineWidth=0.8;ctx.stroke();
+                              });
+                              // Find hovered
+                              let newHovered=-1;
+                              concepts.forEach((c,i)=>{
+                                const p=getPos(c);const r=getRadius(c);
+                                const dx=mouseX-p.x,dy=mouseY-p.y;
+                                if(Math.sqrt(dx*dx+dy*dy)<r+6) newHovered=i;
+                              });
+                              if(newHovered!==hoveredIdx){
+                                hoveredIdx=newHovered;
+                                const tt=document.getElementById('rc-star-tooltip');
+                                if(hoveredIdx>=0){
+                                  const c=concepts[hoveredIdx];
+                                  document.getElementById('rc-tt-name').textContent=c.name;
+                                  const emoji=c.score>=70?'🟢':c.score>=40?'🟠':'🔴';
+                                  const label=c.score>=70?'Aurora':c.score>=40?'Supernova':'Nova';
+                                  document.getElementById('rc-tt-score').innerHTML=emoji+' '+label+' — <strong>'+c.score+'%</strong> memory';
+                                  document.getElementById('rc-tt-edges').textContent=c.edges+' semantic edges'+(c.pulse?' · Due today':'');
+                                  tt.style.display='block';
+                                } else { tt.style.display='none'; }
+                              }
+                              if(hoveredIdx>=0){
+                                const p=getPos(concepts[hoveredIdx]);
+                                const tt=document.getElementById('rc-star-tooltip');
+                                let tx=p.x+14,ty=p.y-30;
+                                if(tx+200>W) tx=p.x-210;
+                                if(ty<10) ty=p.y+14;
+                                tt.style.left=tx+'px';tt.style.top=ty+'px';
+                              }
+                              // Draw stars
+                              concepts.forEach((c,i)=>{
+                                const p=getPos(c);const r=getRadius(c);
+                                const opacity=0.4+c.score/100*0.6;
+                                const isHov=i===hoveredIdx;
+                                // Pulse ring
+                                if(c.pulse){
+                                  const pr=r+4+Math.sin(pulseT+i)*4;
+                                  ctx.beginPath();ctx.arc(p.x,p.y,pr,0,Math.PI*2);
+                                  ctx.strokeStyle='rgba(0,217,196,'+(0.2+Math.abs(Math.sin(pulseT+i))*0.4)+')';
+                                  ctx.lineWidth=1.5;ctx.stroke();
+                                }
+                                // Glow
+                                const grad=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*3);
+                                grad.addColorStop(0,c.color+'88');
+                                grad.addColorStop(1,'transparent');
+                                ctx.beginPath();ctx.arc(p.x,p.y,r*3,0,Math.PI*2);
+                                ctx.fillStyle=grad;ctx.fill();
+                                // Core
+                                ctx.beginPath();ctx.arc(p.x,p.y,isHov?r*1.35:r,0,Math.PI*2);
+                                ctx.fillStyle=c.color;ctx.globalAlpha=opacity;ctx.fill();
+                                ctx.globalAlpha=1;
+                              });
+                              animFrame=requestAnimationFrame(draw);
+                            }
+                            draw();
+                          })();
+                          </script>
+                          <style>@keyframes rcPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}</style>
                         </div>
                     `
                 },
                 {
-                    title: "Knowledge Assessment Page (/dashboard/assess)",
-                    url: "recall.app/dashboard/assess",
-                    description: "How to use: Take AI-powered quizzes generated from your materials to test your active recall and detect knowledge gaps.",
+                    title: "🔄 Spaced Repetition & Daily Review",
+                    url: "recall.app/dashboard/review",
+                    description: "SM-2/FSRS algorithms drive daily interactive flashcard reviews. Grade recall quality 0–5 to schedule optimal intervals. Successful reviews trigger a visual crystallization light burst on the star.",
                     contentHtml: `
-                        <div class="rc-screenshot-wrapper">
-                            <img src="assets/recall-assess.png" alt="Knowledge Assessment Page (/dashboard/assess)" class="rc-screenshot-img" />
+                        <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
+                          <!-- Topbar -->
+                          <div class="rc-topbar" style="padding-bottom:0.6rem;margin-bottom:0.75rem;">
+                            <div class="rc-topbar-left">
+                              <div class="rc-brand-badge">★</div>
+                              <div class="rc-brand-text"><span class="rc-b-title">RECALL</span><span class="rc-b-sub">DAILY REVIEW</span></div>
+                            </div>
+                            <span id="rc-rv-progress" style="background:rgba(0,217,196,0.12);color:#00D9C4;border:1px solid rgba(0,217,196,0.3);padding:0.2rem 0.55rem;border-radius:10px;font-size:0.62rem;font-weight:700;">Card 1 of 8</span>
+                          </div>
+
+                          <!-- Progress bar -->
+                          <div style="background:#0F1629;border-radius:4px;height:4px;margin-bottom:0.85rem;overflow:hidden;">
+                            <div id="rc-rv-bar" style="height:100%;width:12.5%;background:linear-gradient(90deg,#00D9C4,#F5A623);border-radius:4px;transition:width 0.4s ease;"></div>
+                          </div>
+
+                          <!-- Flashcard -->
+                          <div id="rc-flashcard-scene" style="perspective:1000px;margin-bottom:0.85rem;">
+                            <div id="rc-flashcard" style="position:relative;width:100%;height:160px;cursor:pointer;transform-style:preserve-3d;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);" onclick="rcFlipCard()">
+                              <!-- Front -->
+                              <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(135deg,#0F1629,#141E38);border:1.5px solid rgba(0,217,196,0.35);border-radius:14px;padding:1.1rem 1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+                                <div style="display:flex;justify-content:space-between;align-items:center;">
+                                  <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.5px;color:#00D9C4;">SPACED REPETITION · FSRS</span>
+                                  <span style="font-size:0.6rem;color:#F5A623;font-weight:700;">🔄 Due Today</span>
+                                </div>
+                                <div>
+                                  <div style="font-size:0.92rem;font-weight:700;color:#E8F4FD;line-height:1.4;margin-bottom:0.5rem;" id="rc-card-q">Q: What does the FSRS algorithm optimize for when scheduling a card review?</div>
+                                  <div style="color:#8BA3C7;font-size:0.62rem;">Tap to reveal answer</div>
+                                </div>
+                                <div style="font-size:0.58rem;color:rgba(255,255,255,0.25);">Concept: SuperMemo-2 / FSRS · Memory Scheduling</div>
+                              </div>
+                              <!-- Back -->
+                              <div id="rc-card-back" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#080B14,#0D1525);border:1.5px solid rgba(0,217,196,0.5);border-radius:14px;padding:1.1rem 1.25rem;display:flex;flex-direction:column;justify-content:space-between;">
+                                <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.5px;color:#00D9C4;">ANSWER</div>
+                                <div style="background:rgba(0,217,196,0.07);border-left:3px solid #00D9C4;border-radius:0 8px 8px 0;padding:0.65rem 0.85rem;">
+                                  <div id="rc-card-a" style="font-size:0.82rem;font-weight:600;color:#E8F4FD;line-height:1.5;">FSRS maximizes <strong style="color:#00D9C4;">memory retrievability</strong> at review time — scheduling the next interval so you review the card just before you would forget it (~90% target retention), using stability &amp; difficulty parameters.</div>
+                                </div>
+                                <div style="font-size:0.58rem;color:rgba(255,255,255,0.25);">Next interval = f(stability, difficulty, desired retention)</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Grade Buttons (hidden until flipped) -->
+                          <div id="rc-grade-section" style="display:none;flex-direction:column;gap:0.5rem;">
+                            <div style="font-size:0.62rem;font-weight:800;letter-spacing:0.4px;color:#8BA3C7;text-align:center;">Rate your recall quality (0 = blackout · 5 = perfect)</div>
+                            <div style="display:flex;gap:0.35rem;justify-content:center;flex-wrap:wrap;">
+                              <button onclick="rcGradeCard(0)" style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#EF4444;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">0<br><span style="font-size:0.5rem;font-weight:400;">Blackout</span></button>
+                              <button onclick="rcGradeCard(1)" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#F87171;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">1<br><span style="font-size:0.5rem;font-weight:400;">Wrong</span></button>
+                              <button onclick="rcGradeCard(2)" style="background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);color:#F5A623;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">2<br><span style="font-size:0.5rem;font-weight:400;">Hard</span></button>
+                              <button onclick="rcGradeCard(3)" style="background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);color:#F5A623;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">3<br><span style="font-size:0.5rem;font-weight:400;">Good</span></button>
+                              <button onclick="rcGradeCard(4)" style="background:rgba(0,217,196,0.1);border:1px solid rgba(0,217,196,0.3);color:#00D9C4;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">4<br><span style="font-size:0.5rem;font-weight:400;">Easy</span></button>
+                              <button onclick="rcGradeCard(5)" style="background:rgba(0,217,196,0.15);border:1px solid rgba(0,217,196,0.5);color:#00D9C4;padding:0.35rem 0.55rem;border-radius:8px;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all 0.2s;">5<br><span style="font-size:0.5rem;font-weight:400;">Perfect</span></button>
+                            </div>
+                          </div>
+
+                          <!-- Crystallization burst overlay -->
+                          <div id="rc-burst-overlay" style="display:none;position:absolute;inset:0;pointer-events:none;z-index:50;overflow:hidden;">
+                            <div id="rc-burst-inner" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;animation:rcBurstAnim 0.8s ease forwards;">✨</div>
+                          </div>
+
+                          <style>
+                          @keyframes rcBurstAnim { 0%{opacity:0;transform:scale(0.5)} 30%{opacity:1;transform:scale(1.3)} 100%{opacity:0;transform:scale(2)} }
+                          #rc-flashcard.flipped { transform: rotateY(180deg); }
+                          </style>
+                          <script>
+                          var rcCardFlipped = false;
+                          var rcCardIndex = 1;
+                          var rcCards = [
+                            {q:"Q: What does the FSRS algorithm optimize for when scheduling a card review?", a:"FSRS maximizes <strong style='color:#00D9C4'>memory retrievability</strong> at review time — scheduling the next interval so you review the card just before you would forget it (~90% target retention), using stability & difficulty parameters."},
+                            {q:"Q: What % of information is lost within 48 hours without active recall?", a:"~<strong style='color:#00D9C4'>80%</strong> — as shown by Ebbinghaus (1885) exponential decay curve. The forgetting function is R = e^(−t/S) where S is stability."},
+                            {q:"Q: What brain region drives memory consolidation during sleep?", a:"The <strong style='color:#00D9C4'>hippocampus</strong> — replays experiences during slow-wave sleep to transfer memories to the neocortex for long-term storage."},
+                          ];
+                          function rcFlipCard() {
+                            if(rcCardFlipped) return;
+                            rcCardFlipped = true;
+                            document.getElementById('rc-flashcard').classList.add('flipped');
+                            document.getElementById('rc-grade-section').style.display='flex';
+                          }
+                          function rcGradeCard(grade) {
+                            // Crystallization burst for grade >= 3
+                            if(grade >= 3){
+                              const burst = document.getElementById('rc-burst-overlay');
+                              burst.style.display='block';
+                              burst.querySelector('#rc-burst-inner').style.animation='none';
+                              burst.querySelector('#rc-burst-inner').style.animation='rcBurstAnim 0.8s ease forwards';
+                              setTimeout(()=>burst.style.display='none', 900);
+                            }
+                            // Advance card
+                            rcCardIndex = Math.min(rcCardIndex+1, 8);
+                            const pct = (rcCardIndex-1)/8*100;
+                            document.getElementById('rc-rv-bar').style.width=Math.max(pct,12.5)+'%';
+                            document.getElementById('rc-rv-progress').textContent='Card '+rcCardIndex+' of 8';
+                            // Load next card data
+                            const cd = rcCards[(rcCardIndex-1)%rcCards.length];
+                            document.getElementById('rc-card-q').textContent = cd.q;
+                            document.getElementById('rc-card-a').innerHTML = cd.a;
+                            // Reset flip
+                            rcCardFlipped = false;
+                            const fc = document.getElementById('rc-flashcard');
+                            fc.style.transition='none';
+                            fc.classList.remove('flipped');
+                            setTimeout(()=>fc.style.transition='transform 0.55s cubic-bezier(0.4,0,0.2,1)',50);
+                            document.getElementById('rc-grade-section').style.display='none';
+                          }
+                          </script>
                         </div>
                     `
-                }
+                },
+                {
+                    title: "📝 Topic Assessment Engine",
+                    url: "recall.app/dashboard/assess",
+                    description: "AI-generated deep understanding assessments every 3 days. Evaluates recall, short-answer responses, and applied scenario questions. Tracks mastery history over time to measure long-term retention.",
+                    contentHtml: `
+                        <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
+                          <!-- Topbar -->
+                          <div class="rc-topbar" style="padding-bottom:0.6rem;margin-bottom:0.75rem;">
+                            <div class="rc-topbar-left">
+                              <div class="rc-brand-badge">★</div>
+                              <div class="rc-brand-text"><span class="rc-b-title">RECALL</span><span class="rc-b-sub">ASSESSMENT</span></div>
+                            </div>
+                            <span style="background:rgba(245,166,35,0.12);color:#F5A623;border:1px solid rgba(245,166,35,0.3);padding:0.2rem 0.55rem;border-radius:10px;font-size:0.62rem;font-weight:700;">📝 3-Day Assessment</span>
+                          </div>
+
+                          <!-- Assessment header -->
+                          <div style="background:linear-gradient(135deg,rgba(0,217,196,0.08),rgba(245,166,35,0.05));border:1px solid rgba(0,217,196,0.2);border-radius:10px;padding:0.65rem 0.85rem;margin-bottom:0.75rem;display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                              <div style="color:#E8F4FD;font-weight:700;font-size:0.8rem;margin-bottom:0.15rem;">🧠 Distributed Systems — Deep Assessment</div>
+                              <div style="color:#8BA3C7;font-size:0.62rem;">Topic: Consensus Algorithms · 3 questions · ~8 min</div>
+                            </div>
+                            <div style="text-align:right;">
+                              <div style="color:#00D9C4;font-weight:700;font-size:0.75rem;" id="rc-assess-score-display">0 / 3</div>
+                              <div style="color:#8BA3C7;font-size:0.58rem;">completed</div>
+                            </div>
+                          </div>
+
+                          <!-- Questions -->
+                          <div style="display:flex;flex-direction:column;gap:0.55rem;">
+
+                            <!-- Q1: Multiple Choice -->
+                            <div id="rc-aq-1" style="background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.65rem 0.8rem;transition:border-color 0.25s;">
+                              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem;">
+                                <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.4px;color:#00D9C4;">Q1 · RECALL</span>
+                                <span id="rc-aq-1-status" style="font-size:0.58rem;color:#8BA3C7;background:rgba(255,255,255,0.06);padding:0.1rem 0.4rem;border-radius:4px;">Unanswered</span>
+                              </div>
+                              <div style="color:#E8F4FD;font-weight:600;font-size:0.78rem;line-height:1.4;margin-bottom:0.55rem;">In the Raft consensus algorithm, what is the minimum number of nodes needed for a cluster to tolerate 1 server failure?</div>
+                              <div style="display:flex;flex-direction:column;gap:0.3rem;" id="rc-aq-1-opts">
+                                <button onclick="rcAnswerMC(1,'A')" class="rc-mc-opt" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#8BA3C7;padding:0.35rem 0.6rem;border-radius:7px;font-size:0.7rem;text-align:left;cursor:pointer;transition:all 0.2s;font-family:inherit;">A) 2 nodes</button>
+                                <button onclick="rcAnswerMC(1,'B')" class="rc-mc-opt" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#8BA3C7;padding:0.35rem 0.6rem;border-radius:7px;font-size:0.7rem;text-align:left;cursor:pointer;transition:all 0.2s;font-family:inherit;">B) 3 nodes ✓</button>
+                                <button onclick="rcAnswerMC(1,'C')" class="rc-mc-opt" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#8BA3C7;padding:0.35rem 0.6rem;border-radius:7px;font-size:0.7rem;text-align:left;cursor:pointer;transition:all 0.2s;font-family:inherit;">C) 4 nodes</button>
+                                <button onclick="rcAnswerMC(1,'D')" class="rc-mc-opt" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#8BA3C7;padding:0.35rem 0.6rem;border-radius:7px;font-size:0.7rem;text-align:left;cursor:pointer;transition:all 0.2s;font-family:inherit;">D) 5 nodes</button>
+                              </div>
+                            </div>
+
+                            <!-- Q2: Short Answer -->
+                            <div id="rc-aq-2" style="background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.65rem 0.8rem;transition:border-color 0.25s;">
+                              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem;">
+                                <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.4px;color:#F5A623;">Q2 · SHORT ANSWER</span>
+                                <span id="rc-aq-2-status" style="font-size:0.58rem;color:#8BA3C7;background:rgba(255,255,255,0.06);padding:0.1rem 0.4rem;border-radius:4px;">Unanswered</span>
+                              </div>
+                              <div style="color:#E8F4FD;font-weight:600;font-size:0.78rem;line-height:1.4;margin-bottom:0.55rem;">Explain how the FSRS algorithm differs from SuperMemo-2 in tracking memory stability.</div>
+                              <div style="background:#080B14;border:1px solid rgba(255,255,255,0.08);border-radius:7px;padding:0.4rem 0.55rem;margin-bottom:0.4rem;">
+                                <textarea id="rc-aq-2-input" placeholder="Type your answer here..." style="width:100%;background:transparent;border:none;outline:none;color:#E8F4FD;font-size:0.72rem;font-family:inherit;resize:none;min-height:48px;line-height:1.4;" onkeyup="rcCheckSALength(2)" rows="2"></textarea>
+                              </div>
+                              <button onclick="rcSubmitSA(2)" style="background:linear-gradient(90deg,#00D9C4,#00B5A5);color:#080B14;border:none;padding:0.3rem 0.85rem;border-radius:6px;font-size:0.65rem;font-weight:800;cursor:pointer;font-family:inherit;">Submit for AI Grading →</button>
+                            </div>
+
+                            <!-- Q3: Applied Scenario -->
+                            <div id="rc-aq-3" style="background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0.65rem 0.8rem;transition:border-color 0.25s;">
+                              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.45rem;">
+                                <span style="font-size:0.6rem;font-weight:800;letter-spacing:0.4px;color:#FF6B9D;">Q3 · APPLIED SCENARIO</span>
+                                <span id="rc-aq-3-status" style="font-size:0.58rem;color:#8BA3C7;background:rgba(255,255,255,0.06);padding:0.1rem 0.4rem;border-radius:4px;">Unanswered</span>
+                              </div>
+                              <div style="color:#E8F4FD;font-weight:600;font-size:0.78rem;line-height:1.4;margin-bottom:0.35rem;">Scenario: You're designing a distributed key-value store that requires strong consistency. A network partition splits your 5-node Raft cluster into groups of 2 and 3. What happens, and why?</div>
+                              <div style="background:rgba(255,107,157,0.06);border:1px solid rgba(255,107,157,0.2);border-radius:7px;padding:0.45rem 0.65rem;margin-bottom:0.45rem;font-size:0.62rem;color:#8BA3C7;">💡 Hint: Consider majority quorum requirements and CAP theorem trade-offs</div>
+                              <div style="background:#080B14;border:1px solid rgba(255,255,255,0.08);border-radius:7px;padding:0.4rem 0.55rem;margin-bottom:0.4rem;">
+                                <textarea id="rc-aq-3-input" placeholder="Describe what each partition does..." style="width:100%;background:transparent;border:none;outline:none;color:#E8F4FD;font-size:0.72rem;font-family:inherit;resize:none;min-height:48px;line-height:1.4;" rows="2"></textarea>
+                              </div>
+                              <button onclick="rcSubmitSA(3)" style="background:linear-gradient(90deg,#FF6B9D,#D94F80);color:#fff;border:none;padding:0.3rem 0.85rem;border-radius:6px;font-size:0.65rem;font-weight:800;cursor:pointer;font-family:inherit;">Submit for AI Grading →</button>
+                            </div>
+                          </div>
+
+                          <!-- Mastery bar -->
+                          <div style="margin-top:0.75rem;background:#0F1629;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.55rem 0.75rem;">
+                            <div style="display:flex;justify-content:space-between;font-size:0.62rem;margin-bottom:0.35rem;">
+                              <span style="color:#8BA3C7;font-weight:600;">Topic Mastery — Distributed Systems</span>
+                              <span style="color:#F5A623;font-weight:700;" id="rc-mastery-pct">68%</span>
+                            </div>
+                            <div style="background:#080B14;border-radius:3px;height:5px;overflow:hidden;">
+                              <div id="rc-mastery-bar" style="height:100%;width:68%;background:linear-gradient(90deg,#F5A623,#00D9C4);border-radius:3px;transition:width 0.5s ease;"></div>
+                            </div>
+                            <div style="color:#8BA3C7;font-size:0.58rem;margin-top:0.3rem;">Next assessment in <strong style="color:#00D9C4;">3 days</strong> · Last score: 72% (Jul 17)</div>
+                          </div>
+
+                          <script>
+                          var rcAssessCompleted = 0;
+                          var rcMastery = 68;
+                          function rcAnswerMC(qn, choice) {
+                            const opts = document.querySelectorAll('#rc-aq-'+qn+'-opts .rc-mc-opt');
+                            const correct = 'B';
+                            opts.forEach((btn,i)=>{
+                              btn.disabled = true;
+                              const ltr = ['A','B','C','D'][i];
+                              if(ltr===correct){ btn.style.background='rgba(0,217,196,0.15)';btn.style.borderColor='rgba(0,217,196,0.5)';btn.style.color='#00D9C4'; }
+                              else if(ltr===choice && choice!==correct){ btn.style.background='rgba(239,68,68,0.12)';btn.style.borderColor='rgba(239,68,68,0.4)';btn.style.color='#EF4444'; }
+                            });
+                            const status = document.getElementById('rc-aq-'+qn+'-status');
+                            const card = document.getElementById('rc-aq-'+qn);
+                            if(choice===correct){
+                              status.textContent='✅ Correct!'; status.style.color='#00D9C4'; status.style.background='rgba(0,217,196,0.1)';
+                              card.style.borderColor='rgba(0,217,196,0.4)';
+                              rcAssessCompleted++; rcUpdateScore(); rcMastery=Math.min(100,rcMastery+8); rcUpdateMastery();
+                            } else {
+                              status.textContent='❌ Wrong'; status.style.color='#EF4444'; status.style.background='rgba(239,68,68,0.1)';
+                              card.style.borderColor='rgba(239,68,68,0.3)';
+                              rcAssessCompleted++; rcUpdateScore();
+                            }
+                          }
+                          function rcSubmitSA(qn){
+                            const input = document.getElementById('rc-aq-'+qn+'-input');
+                            if(!input.value.trim()){ input.style.borderColor='rgba(239,68,68,0.4)'; return; }
+                            const status = document.getElementById('rc-aq-'+qn+'-status');
+                            const card = document.getElementById('rc-aq-'+qn);
+                            status.textContent='⏳ AI Grading...'; status.style.color='#F5A623'; status.style.background='rgba(245,166,35,0.1)';
+                            input.disabled=true;
+                            setTimeout(()=>{
+                              const score = input.value.length>50?88:45;
+                              const good=score>=60;
+                              status.textContent=(good?'✅ ':'⚠️ ')+score+'% — '+(good?'Strong recall':'Needs more depth');
+                              status.style.color=good?'#00D9C4':'#F5A623';
+                              status.style.background=good?'rgba(0,217,196,0.1)':'rgba(245,166,35,0.1)';
+                              card.style.borderColor=good?'rgba(0,217,196,0.4)':'rgba(245,166,35,0.35)';
+                              if(good){rcMastery=Math.min(100,rcMastery+6);rcUpdateMastery();}
+                              rcAssessCompleted++; rcUpdateScore();
+                            },1200);
+                          }
+                          function rcUpdateScore(){
+                            document.getElementById('rc-assess-score-display').textContent=rcAssessCompleted+' / 3';
+                          }
+                          function rcUpdateMastery(){
+                            document.getElementById('rc-mastery-bar').style.width=rcMastery+'%';
+                            document.getElementById('rc-mastery-pct').textContent=rcMastery+'%';
+                          }
+                          </script>
+                        </div>
+                    `
+                },
             ],
             hotspots: [
                 { x: 25, y: 27, title: "📄 Document & Ingestion Engine", desc: "Ingest PDFs, Web URLs, and raw text notes. AI workers extract structured knowledge and break material into atomic concepts with 1536-dim pgvector embeddings." },
@@ -1448,6 +1992,16 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                 { from: "nestjs_api", to: "redis_queue", label: "Enqueue Jobs", animated: true },
                 { from: "redis_queue", to: "ai_workers", label: "Process Pipeline", animated: true },
                 { from: "ai_workers", to: "postgres_db", label: "Save Embeddings & Tests", animated: false }
+            ]
+        },
+        video: {
+            videoTitle: "RECALL Demo Walkthrough",
+            videoDuration: "1:00",
+            videoUrl: "assets/RECALL_demo.mp4",
+            explanationPoints: [
+                { title: "3D Memory Universe", text: "Watch how study materials are transformed into an interactive 3D starfield where each concept becomes a star — sized by centrality and colored by memory health." },
+                { title: "Spaced Repetition Engine", text: "See the SM-2 / FSRS daily review loop in action: flip AI-generated flashcards, grade recall quality 0–5, and trigger crystallization light bursts on successfully reviewed stars." },
+                { title: "AI Assessment Engine", text: "Explore the 3-Day Deep Assessment system generating recall, short-answer, and applied scenario questions to track long-term mastery and detect knowledge gaps." }
             ]
         }
     }

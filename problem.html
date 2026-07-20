@@ -163,7 +163,7 @@
     </main>
 
     <!-- Real Website Usage Showcase (Alternating Rows Layout) -->
-    <section class="usage-section-outer" id="demo">
+    <section class="usage-section-outer" id="demo-showcase">
         <div class="usage-list" id="browser-scroll-container">
             <!-- Dynamic rows injected here -->
         </div>
@@ -172,7 +172,7 @@
     <main class="p-container">
 
         <!-- Video & Features Breakdown -->
-        <section class="video-section">
+        <section class="video-section" id="demo">
             <div class="p-section-header" style="margin-bottom: 2.5rem;">
                 <span class="p-section-badge">VIDEO TOUR</span>
                 <h2 class="p-section-title">Walkthrough & Technical Details</h2>
@@ -326,7 +326,13 @@
             // Sync capsule with currently active link
             const activeLink = navContainer.querySelector(".v-nav-link.active");
             if (activeLink) {
+                moveCapsuleTo(activeLink);
                 setTimeout(() => moveCapsuleTo(activeLink), 150);
+                window.addEventListener("load", () => moveCapsuleTo(activeLink));
+                window.addEventListener("resize", () => {
+                    const currentActive = navContainer.querySelector(".v-nav-link.active");
+                    if (currentActive) moveCapsuleTo(currentActive);
+                });
             }
 
             navContainer.addEventListener("mouseenter", () => {
@@ -389,13 +395,18 @@
                     memeGif.src = data.meme.gif;
                     memeGif.style.display = "block";
                 }
-                if (memeText) memeText.style.display = "none";
+                if (memeText && data.meme.caption) {
+                    memeText.innerHTML = data.meme.caption.replace(/\n/g, '<br>');
+                    memeText.style.display = "block";
+                } else if (memeText) {
+                    memeText.style.display = "none";
+                }
                 if (memeFace) memeFace.style.display = "none";
                 if (memeBar) memeBar.style.display = "none";
             } else {
                 if (memeGif) memeGif.style.display = "none";
                 if (memeText) {
-                    memeText.textContent = `"${data.meme.caption}"`;
+                    memeText.innerHTML = data.meme.caption ? data.meme.caption.replace(/\n/g, '<br>') : '';
                     memeText.style.display = "block";
                 }
                 if (memeFace) {
@@ -978,35 +989,40 @@
 
 
 
-            // Active Navigation Links Highlighting on Scroll
-            const sections = document.querySelectorAll("section[id]");
-            const navLinks = document.querySelectorAll(".v-nav-link");
+            // Active Navigation Links Highlighting — using IntersectionObserver (correct approach)
+            const navLinksForScroll = document.querySelectorAll(".v-nav-link");
+            const trackedIds = ["overview", "story", "demo", "features"];
+            const trackedSections = trackedIds.map(id => document.getElementById(id)).filter(Boolean);
 
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 120;
-                    if (window.scrollY >= sectionTop) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach(link => {
+            function setActiveNav(id) {
+                navLinksForScroll.forEach(link => {
                     link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${current}`) {
+                    if (link.getAttribute("href") === `#${id}`) {
                         link.classList.add("active");
                     }
                 });
-                
-                // Recalculate capsule position to follow active
-                const currentActive = navContainer.querySelector(".v-nav-link.active");
-                if (currentActive && !isHovered) {
-                    moveCapsuleTo(currentActive);
+                if (!isHovered) {
+                    const activeEl = navContainer.querySelector(".v-nav-link.active");
+                    moveCapsuleTo(activeEl);
                 }
-            });
+            }
+
+            // rootMargin: top=-64px (header height), bottom=-55% so only top portion triggers
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveNav(entry.target.getAttribute("id"));
+                    }
+                });
+            }, { rootMargin: "-64px 0px -55% 0px", threshold: 0 });
+
+            trackedSections.forEach(s => sectionObserver.observe(s));
+
+            // Set initial active state
+            setActiveNav("overview");
 
             // Smooth Scroll on header navigation clicks
-            navLinks.forEach(link => {
+            navLinksForScroll.forEach(link => {
                 link.addEventListener("click", (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute("href");

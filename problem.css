@@ -24,7 +24,7 @@ body.problem-page {
     left: 0;
     right: 0;
     height: 64px;
-    background-color: transparent;
+    background-color: var(--header-bg, rgba(240, 237, 232, 0.85));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-card);
@@ -2128,14 +2128,19 @@ body.problem-page {
 .v-nav-capsule {
     position: absolute;
     top: 0.25rem;
-    height: calc(100% - 0.5rem);
-    background-color: var(--theme-bg);
+    bottom: 0.25rem;
+    background-color: var(--bg-card);
     border: 1px solid var(--border-card-hover);
     border-radius: 999px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
     z-index: 1;
     opacity: 0;
     pointer-events: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+section[id] {
+    scroll-margin-top: 80px;
 }
 
 /* Hero Tagline & Blinking Cursor */
@@ -4200,6 +4205,53 @@ body.problem-page {
     font-family: inherit;
     resize: vertical;
 }
+
+/* Meme Card & Image Wrapper Layout Fixes */
+.meme-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.fun-meme-image-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1.25rem !important;
+    padding: 1rem 0 !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+.fun-meme-quote {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text-main);
+    text-align: center;
+    margin: 0 0 0.5rem 0 !important;
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+}
+
+#fun-meme-gif {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18) !important;
+    border: 1px solid var(--border-card) !important;
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 auto !important;
+}
+
 
 
 
