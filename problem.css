@@ -3,6 +3,7 @@
 /* Custom properties for dynamic themes, updated via JS per project */
 :root {
     --theme-primary: var(--primary);
+    --theme-secondary: var(--accent);
     --theme-primary-rgb: 15, 15, 17;
     --theme-bg: var(--bg-card);
     --theme-accent: var(--accent);
@@ -246,7 +247,7 @@ body.problem-page {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--theme-primary);
+    background: linear-gradient(135deg, var(--theme-primary), var(--theme-secondary));
     color: var(--bg-card);
     text-decoration: none;
     font-size: 0.9rem;
@@ -1135,21 +1136,40 @@ body.problem-page {
 
 
 /* Video & Explanation Grid */
+.video-section {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0 2rem 3rem;
+    background: transparent;
+}
+
 .video-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.exp-list {
+    width: 100%;
 }
 
 .video-container {
+    width: 100%;
+    min-height: 640px;
     background-color: #000;
-    border-radius: 24px;
+    border-radius: 28px;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 16/9;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .video-thumbnail {
@@ -1158,7 +1178,7 @@ body.problem-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1a1a24;
+    background-color: #111118;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1178,6 +1198,15 @@ body.problem-page {
     top: 0; left: 0; right: 0; bottom: 0;
     background: radial-gradient(circle at center, rgba(var(--theme-primary-rgb), 0.1) 0%, rgba(0,0,0,0.4) 100%);
     pointer-events: none;
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .video-play-btn {
@@ -2047,9 +2076,20 @@ body.problem-page {
 
 /* Responsiveness tweaks for detailed view */
 @media (max-width: 1024px) {
+    .video-section {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 1.5rem 2.5rem;
+    }
     .split-grid, .video-grid, .annotation-box {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    .video-container {
+        min-height: 500px;
     }
     .sys-canvas-wrapper {
         grid-template-columns: 1fr;
@@ -2064,8 +2104,14 @@ body.problem-page {
 }
 
 @media (max-width: 768px) {
+    .video-section {
+        padding: 0 1rem 2rem;
+    }
     .p-hero-title {
         font-size: 2.5rem;
+    }
+    .video-container {
+        min-height: 320px;
     }
     .v-nav {
         display: none; /* Hide middle menu items to avoid overflow */
@@ -2976,21 +3022,21 @@ section[id] {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 20%, transparent);
-    padding: 1rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 12%, transparent);
+    padding: 1.25rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     color: white;
-    font-size: 0.75rem;
-    font-family: monospace;
+    font-size: 0.9rem;
+    font-family: Inter, sans-serif;
     z-index: 6;
 }
 .video-progress-bar-wrapper {
     flex-grow: 1;
-    height: 4px;
-    background-color: rgba(255,255,255,0.25);
-    border-radius: 2px;
+    height: 5px;
+    background-color: rgba(255,255,255,0.18);
+    border-radius: 999px;
     overflow: hidden;
     cursor: pointer;
 }
@@ -2998,8 +3044,8 @@ section[id] {
     height: 100%;
     width: 0%;
     background-color: var(--theme-primary);
-    border-radius: 2px;
-    transition: width 0.1s linear;
+    border-radius: inherit;
+    transition: width 0.12s linear;
 }
 .exp-item {
     cursor: pointer;

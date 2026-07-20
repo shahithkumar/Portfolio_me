@@ -179,10 +179,10 @@
             </div>
             
             <div class="video-grid">
-                <!-- Left: Interactive Video Player Mockup -->
+                <!-- Interactive Video Player Mockup -->
                 <div class="video-container">
-                    <video id="tour-video" playsinline autoplay muted loop style="position: absolute; top: 0; left: -10%; width: 120%; height: 114%; object-fit: cover; z-index: 1; display: none;"></video>
-                    <iframe id="tour-vimeo-iframe" src="" style="position: absolute; top: 0; left: -10%; width: 120%; height: 114%; border: none; z-index: 1; display: none; object-fit: cover;" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video"></iframe>
+                    <video id="tour-video" class="video-player" playsinline autoplay muted loop style="z-index: 1; display: none;"></video>
+                    <iframe id="tour-vimeo-iframe" class="video-player" src="" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" title="Walkthrough Video" style="z-index: 1; display: none;"></iframe>
                     <div class="video-thumbnail" id="video-thumbnail" style="z-index: 2;">
                         <div class="video-overlay-glow"></div>
                         <div class="video-loading-indicator" id="video-loading-indicator" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; color: rgba(255,255,255,0.85); font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 500;">
@@ -203,8 +203,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Right: Explanations -->
                 <div class="exp-list" id="video-expl-list">
                     <!-- JS Injected highlights -->
                 </div>
@@ -289,8 +287,11 @@
                 return;
             }
 
-            document.documentElement.style.setProperty('--theme-primary', `var(--box-${data.theme}-fg)`);
-            document.documentElement.style.setProperty('--theme-bg', `var(--box-${data.theme}-bg)`);
+            const themePrimaryValue = data.themeColors?.primary || `var(--box-${data.theme}-fg)`;
+            const themeBgValue = data.themeColors?.bg || `var(--box-${data.theme}-bg)`;
+            document.documentElement.style.setProperty('--theme-primary', themePrimaryValue);
+            document.documentElement.style.setProperty('--theme-bg', themeBgValue);
+            document.documentElement.style.setProperty('--theme-secondary', data.themeColors?.secondary || themePrimaryValue);
             
             // Map RGB equivalent for shadows
             const rgbValues = {
@@ -544,25 +545,32 @@
                 
                 wrapper.innerHTML = `
                     <div class="slide-mockup-col">
-                        <!-- High Fidelity Browser Window Mockup -->
-                        <div class="browser-mockup-frame" id="mockup-frame-${idx}">
-                            <div class="browser-header-bar" id="header-bar-${idx}">
-                                <div class="browser-dots">
-                                    <span class="b-dot red"></span>
-                                    <span class="b-dot yellow"></span>
-                                    <span class="b-dot green"></span>
-                                </div>
-                                <div class="browser-address-bar">${pg.url}</div>
+                        <!-- Show Preview Image Instead of Browser Mockup -->
+                        ${pg.preview ? `
+                            <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:var(--bg-card); border-radius:16px; border:1px solid var(--border-card); overflow:hidden; padding:1rem; box-sizing:border-box;">
+                                <img src="${pg.preview}" alt="${pg.title}" style="width:100%; height:100%; object-fit:contain; border-radius:12px;">
                             </div>
-                            <div class="browser-body">
-                                <div class="manual-mode-badge" id="manual-mode-badge-${idx}">
-                                    🖱️ Hover to interact manually
+                        ` : `
+                            <!-- Fallback: Browser Mockup if no preview -->
+                            <div class="browser-mockup-frame" id="mockup-frame-${idx}">
+                                <div class="browser-header-bar" id="header-bar-${idx}">
+                                    <div class="browser-dots">
+                                        <span class="b-dot red"></span>
+                                        <span class="b-dot yellow"></span>
+                                        <span class="b-dot green"></span>
+                                    </div>
+                                    <div class="browser-address-bar">${pg.url}</div>
                                 </div>
-                                <div class="browser-scroll-container-inner" style="width:100%; height:100%; position:relative; overflow:hidden;">
-                                    ${pg.contentHtml}
+                                <div class="browser-body">
+                                    <div class="manual-mode-badge" id="manual-mode-badge-${idx}">
+                                        🖱️ Hover to interact manually
+                                    </div>
+                                    <div class="browser-scroll-container-inner" style="width:100%; height:100%; position:relative; overflow:hidden;">
+                                        ${pg.contentHtml}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        `}
                     </div>
                     <div class="slide-content-col" id="content-col-${idx}">
                         <span class="ua-badge">${data.productName} Demo</span>
@@ -994,7 +1002,11 @@
             const trackedIds = ["overview", "story", "demo", "features"];
             const trackedSections = trackedIds.map(id => document.getElementById(id)).filter(Boolean);
 
+            // DEBUG: log what sections were found
+            console.log("[NAV DEBUG] trackedSections found:", trackedSections.map(s => s.id + " @ absTop=" + (s.getBoundingClientRect().top + window.scrollY).toFixed(0)));
+
             function setActiveNav(id) {
+                console.log("[NAV DEBUG] setActiveNav called with:", id);
                 navLinksForScroll.forEach(link => {
                     link.classList.remove("active");
                     if (link.getAttribute("href") === `#${id}`) {
@@ -1010,6 +1022,7 @@
             // rootMargin: top=-64px (header height), bottom=-55% so only top portion triggers
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
+                    console.log("[NAV DEBUG] IntersectionObserver:", entry.target.id, "isIntersecting:", entry.isIntersecting, "ratio:", entry.intersectionRatio);
                     if (entry.isIntersecting) {
                         setActiveNav(entry.target.getAttribute("id"));
                     }
@@ -1020,6 +1033,7 @@
 
             // Set initial active state
             setActiveNav("overview");
+
 
             // Smooth Scroll on header navigation clicks
             navLinksForScroll.forEach(link => {

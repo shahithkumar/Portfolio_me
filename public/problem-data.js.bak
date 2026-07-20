@@ -1262,7 +1262,7 @@ Most productivity tools fight this by locking you out. But people don't want to 
                 "📝 3-Day Topic Assessment Engine (recall, short answer, scenarios) tracking retention"
             ],
             caption: "Me after finishing a great book:\n\"This might be the best book I've ever read.\"\n\nMe a month later:\n\"I know it was amazing... I just don't remember why.\" 📚",
-            gif: "assets/GIF_RECALL.gif"
+            gif: "assets/youtube-focus-meme.gif"
         },
         origin: {
             story: `It all started with a simple Reddit question: "How do you actually stop forgetting everything you just read?" The more I read through the discussion, the more I realized I had the same problem. I was spending hours reading books, articles, and documentation, only to forget most of it weeks later. That made me ask a different question—not "How can I read more?" but "How can I remember more?" That question became the foundation of RECALL, a project built to help knowledge stay with you instead of slowly fading away.`,
@@ -1282,6 +1282,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "📄 Document & Knowledge Ingestion",
                     url: "recall.app/dashboard/upload",
                     description: "Drag & drop PDFs, Web URLs, or raw text notes. AI background workers extract structured knowledge and atomize documents into interconnected concepts with semantic embeddings.",
+                    preview: "assets/recall-upload.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem; min-height:340px; font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1416,6 +1417,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🧠 AI Concept Extraction & Relationship Graph",
                     url: "recall.app/dashboard/concepts",
                     description: "AI automatically identifies key concepts, definitions, and summaries, then links them with semantic edges (prerequisite_of, analogous_to, extends, part_of) and generates Q&A flashcards for each concept.",
+                    preview: "assets/recall-dashboard.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1561,6 +1563,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🌌 Interactive 3D Knowledge Universe",
                     url: "recall.app/dashboard/universe",
                     description: "Visualizes your knowledge as a living galaxy. Star Size = concept centrality. Star Brightness = memory score. 🟢 Aurora (≥70%), 🟠 Supernova (40–69%), 🔴 Nova (<40%). Pulsing rings = due for review today.",
+                    preview: "assets/recall-universe.png",
                     contentHtml: `
                         <div style="background:#04060C;border-radius:12px;min-height:340px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1723,6 +1726,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🔄 Spaced Repetition & Daily Review",
                     url: "recall.app/dashboard/review",
                     description: "SM-2/FSRS algorithms drive daily interactive flashcard reviews. Grade recall quality 0–5 to schedule optimal intervals. Successful reviews trigger a visual crystallization light burst on the star.",
+                    preview: "assets/recall-review.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1835,6 +1839,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "📝 Topic Assessment Engine",
                     url: "recall.app/dashboard/assess",
                     description: "AI-generated deep understanding assessments every 3 days. Evaluates recall, short-answer responses, and applied scenario questions. Tracks mastery history over time to measure long-term retention.",
+                    preview: "assets/recall-assess.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->

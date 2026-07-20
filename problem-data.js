@@ -1241,6 +1241,7 @@ Most productivity tools fight this by locking you out. But people don't want to 
         theme: "aurora",
         themeColors: {
             primary: "#00D9C4",
+            secondary: "#00D9C4",
             bg: "#080B14"
         },
         meme: {
@@ -1282,6 +1283,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "📄 Document & Knowledge Ingestion",
                     url: "recall.app/dashboard/upload",
                     description: "Drag & drop PDFs, Web URLs, or raw text notes. AI background workers extract structured knowledge and atomize documents into interconnected concepts with semantic embeddings.",
+                    preview: "assets/recall-upload.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem; min-height:340px; font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1416,6 +1418,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🧠 AI Concept Extraction & Relationship Graph",
                     url: "recall.app/dashboard/concepts",
                     description: "AI automatically identifies key concepts, definitions, and summaries, then links them with semantic edges (prerequisite_of, analogous_to, extends, part_of) and generates Q&A flashcards for each concept.",
+                    preview: "assets/recall-dashboard.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1561,6 +1564,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🌌 Interactive 3D Knowledge Universe",
                     url: "recall.app/dashboard/universe",
                     description: "Visualizes your knowledge as a living galaxy. Star Size = concept centrality. Star Brightness = memory score. 🟢 Aurora (≥70%), 🟠 Supernova (40–69%), 🔴 Nova (<40%). Pulsing rings = due for review today.",
+                    preview: "assets/recall-universe.png",
                     contentHtml: `
                         <div style="background:#04060C;border-radius:12px;min-height:340px;position:relative;overflow:hidden;font-family:'Inter',sans-serif;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1723,6 +1727,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "🔄 Spaced Repetition & Daily Review",
                     url: "recall.app/dashboard/review",
                     description: "SM-2/FSRS algorithms drive daily interactive flashcard reviews. Grade recall quality 0–5 to schedule optimal intervals. Successful reviews trigger a visual crystallization light burst on the star.",
+                    preview: "assets/recall-review.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1835,6 +1840,7 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
                     title: "📝 Topic Assessment Engine",
                     url: "recall.app/dashboard/assess",
                     description: "AI-generated deep understanding assessments every 3 days. Evaluates recall, short-answer responses, and applied scenario questions. Tracks mastery history over time to measure long-term retention.",
+                    preview: "assets/recall-assess.png",
                     contentHtml: `
                         <div class="rc-dashboard-wrapper" style="padding:0.75rem;min-height:340px;font-size:0.78rem;">
                           <!-- Topbar -->
@@ -1998,10 +2004,62 @@ RECALL bridges this gap by combining 3D spatial visualization with modern Spaced
             videoTitle: "RECALL Demo Walkthrough",
             videoDuration: "1:00",
             videoUrl: "assets/RECALL_demo.mp4",
-            explanationPoints: [
-                { title: "3D Memory Universe", text: "Watch how study materials are transformed into an interactive 3D starfield where each concept becomes a star — sized by centrality and colored by memory health." },
-                { title: "Spaced Repetition Engine", text: "See the SM-2 / FSRS daily review loop in action: flip AI-generated flashcards, grade recall quality 0–5, and trigger crystallization light bursts on successfully reviewed stars." },
-                { title: "AI Assessment Engine", text: "Explore the 3-Day Deep Assessment system generating recall, short-answer, and applied scenario questions to track long-term mastery and detect knowledge gaps." }
+            explanationPoints: []
+        },
+        features: {
+            mockupTitle: "RECALL — Core Capabilities Architecture",
+            mockupHtml: `
+                <div class="rc-features-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; padding:1.25rem; background:var(--bg-page); width:100%; box-sizing:border-box; border-radius:16px;">
+                    <div class="rc-feat-card" id="hotspot-ingestion" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00D9C4,#00B4D8);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📄</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Document Ingestion Pipeline</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">PDFs, URLs & Raw Notes</div>
+                            </div>
+                        </div>
+                        <img src="assets/recall-upload.png" alt="Document Ingestion" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border-card);">
+                    </div>
+
+                    <div class="rc-feat-card" id="hotspot-graph" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#a855f7,#ec4899);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🧠</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">AI Concept Graph & Edges</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Semantic Relationships</div>
+                            </div>
+                        </div>
+                        <img src="assets/recall-dashboard.png" alt="AI Concept Graph" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border-card);">
+                    </div>
+
+                    <div class="rc-feat-card" id="hotspot-universe" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#f59e0b,#fbbf24);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🌌</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">Interactive 3D Galaxy (R3F)</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Three.js Spatial WebGL</div>
+                            </div>
+                        </div>
+                        <img src="assets/recall-universe.png" alt="3D Galaxy" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border-card);">
+                    </div>
+
+                    <div class="rc-feat-card" id="hotspot-review" style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:16px; padding:1.1rem; display:flex; flex-direction:column; gap:0.6rem; position:relative; overflow:hidden;">
+                        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+                            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#10b981,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🔄</div>
+                            <div>
+                                <div style="font-size:0.82rem;font-weight:800;color:var(--text-main);font-family:var(--font-heading);">SM-2 / FSRS Review & Assessment</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;">Crystallization Burst</div>
+                            </div>
+                        </div>
+                        <img src="assets/recall-assess.png" alt="Assessment & Review" style="width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border-card);">
+                    </div>
+                </div>
+            `,
+            hotspots: [
+                { x: 25, y: 27, title: "📄 Document Ingestion Pipeline", desc: "Ingest PDFs, Web URLs, and raw text notes. AI background workers extract structured knowledge and break material into atomic concepts with 1536-dim pgvector embeddings." },
+                { x: 75, y: 27, title: "🧠 Concept Generator & Semantic Edges", desc: "Automated Concept Generator and Relationship Mapper linking concepts with semantic directional edges (prerequisite_of, analogous_to, extends, part_of) + Flashcard Engine Q&A." },
+                { x: 25, y: 73, title: "🌌 R3F / Three.js 3D Universe", desc: "Interactive WebGL starfield graph scaling Star Size by centrality (connected relationships) & Brightness/Color by Memory Score (🟢 Aurora ≥70%, 🟠 Supernova 40–69%, 🔴 Nova <40%) with Memory Pulse rings." },
+                { x: 75, y: 73, title: "🔄 SM-2 / FSRS & 3-Day Assessment", desc: "Spaced Repetition daily reviews graded 0 to 5 triggering visual crystallization light bursts + AI 3-Day Deep Assessments (recall, short answer, applied scenarios) with long-term retention tracking." }
             ]
         }
     }
