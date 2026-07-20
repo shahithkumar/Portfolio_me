@@ -793,6 +793,12 @@ body {
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 15px 35px rgba(234, 88, 12, 0.22), 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+.problem-card.theme-aurora {
+    background: radial-gradient(circle at 20% 20%, #00D9C4 0%, #0F1629 60%, #080B14 100%);
+    box-shadow: inset 0 1px 1px rgba(0, 217, 196, 0.35), 0 15px 35px rgba(0, 217, 196, 0.25), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
 /* Icon Box helper colors (backward compatibility / modal fallback) */
 .box-gold {
     background-color: var(--box-gold-bg);

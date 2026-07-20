@@ -1228,5 +1228,290 @@ Most productivity tools fight this by locking you out. But people don't want to 
                 { from: "content_script", to: "youtube", label: "Inject CSS Filters", animated: false }
             ]
         }
+    },
+    "8": {
+        id: "8",
+        title: "How do I retain complex knowledge long-term without forgetting?",
+        productName: "RECALL",
+        tagline: "AI-powered Memory Operating System. Turn knowledge into a living 3D universe with spaced repetition.",
+        creator: "Shahith Kumar",
+        year: "2026",
+        link: "https://github.com/shahithkumar/RECALL",
+        ctaText: "Get GitHub Link",
+        theme: "aurora",
+        themeColors: {
+            primary: "#00D9C4",
+            bg: "#080B14"
+        },
+        meme: {
+            title: "The Forgetting Curve Trap",
+            leftLabel: "Linear Notes & PDF Bookmarks",
+            leftItems: [
+                "50% forgotten within 1 hour, 80% lost in 48 hours",
+                "Passive highlighting creates false sense of knowledge",
+                "Flat linear notes hide concept dependencies",
+                "Dead bookmarks piling up in forgotten folders"
+            ],
+            rightLabel: "RECALL 3D Memory OS",
+            rightItems: [
+                "AI converts PDFs & docs into 3D Starfield Galaxy",
+                "Stars dim (Aurora 🟢 -> Supernova 🟡 -> Nova 🔴) with FSRS decay",
+                "Daily Spaced Repetition (Memory Pulse) active recall",
+                "3-Day Deep Assessment Tests spark light crystallization"
+            ],
+            caption: "Me after finishing a great book:\n\"This might be the best book I've ever read.\"\n\nMe a month later:\n\"I know it was amazing... I just don't remember why.\" 📚",
+            gif: "assets/GIF_RECALL.gif"
+        },
+        origin: {
+            story: `I spent years reading dense textbooks, technical whitepapers, and software documentation. I highlighted lines, bookmarked URLs, and wrote linear notes in Notion. Yet weeks later, when attempting to build complex software architectures or explain foundational principles, the knowledge was completely gone.
+
+I realized that passive reading creates a dangerous illusion of mastery—"I saved it, so I know it." Traditional note systems list information linearly, completely obscuring prerequisite relationships, analogies, and critically, which memories are actively decaying according to human cognitive biology.
+
+That's why I created RECALL: an AI-powered Memory Operating System. Instead of flat static notes, RECALL ingests your documents and projects them into a living 3D visual universe. Every atomic concept becomes an interactive star connected in a semantic network. Using cognitive science algorithms (FSRS & SuperMemo-2), stars dim and shift colors as memory fades, triggering daily Memory Pulses and automated 3-Day Deep Assessment tests to keep your knowledge permanently crystallized.`,
+            relevanceTitle: "Combating the Ebbinghaus Forgetting Curve with Spatial AI Cognition",
+            relevanceText: `Hermann Ebbinghaus proved that human memory decays exponentially without active recall: over 50% of newly learned information is lost within 1 hour, and up to 80% vanishes within 48 hours.
+
+Generic study tools fail because flashcards operate in isolation without showing how concepts build upon one another, while document readers offer zero retention tracking.
+
+RECALL bridges this gap by combining 3D spatial visualization with modern Spaced Repetition (FSRS/SM-2) and vector embeddings (pgvector). Knowledge is transformed from dead text into an interconnected galaxy where decay is visible, review is effortless, and comprehension is validated through deep multi-format testing.`,
+            milestones: [
+                {
+                    title: "Scaffolding & Architecture",
+                    text: "Engineered pnpm + Turborepo monorepo with NestJS + Fastify API, Next.js 15 App Router, Prisma ORM, PostgreSQL + pgvector, and Redis BullMQ workers."
+                },
+                {
+                    title: "AI Document Ingestion Pipeline",
+                    text: "Built pipeline extracting atomic concepts from PDFs, web pages, and markdown notes, linking them with directional relationships (prerequisite_of, analogous_to, extends)."
+                },
+                {
+                    title: "3D Visual Knowledge Universe",
+                    text: "Implemented interactive React Three Fiber 3D Canvas rendering concept nodes as glowing stars clustered into colored topic nebulae with dynamic shaders."
+                },
+                {
+                    title: "FSRS Memory Pulse & 3-Day Assessment Engine",
+                    text: "Integrated SuperMemo-2 / FSRS cognitive scheduling algorithms for daily flashcard reviews and created background AI workers for automated 3-day synthesis tests."
+                }
+            ],
+            stats: [
+                { label: "Concept Retention Rate", value: "92%", percentage: 92 },
+                { label: "Active Recall Acceleration", value: "3.5x", percentage: 88 },
+                { label: "Forgetting Curve Decay Offset", value: "80%", percentage: 80 }
+            ]
+        },
+        usage: {
+            browserTitle: "RECALL — 3D Memory Operating System",
+            pages: [
+                {
+                    title: "1. 3D Knowledge Universe & Galaxy Clusters",
+                    url: "recall.app/universe",
+                    description: "Concepts render as interactive 3D stars. Color reflects memory health (Aurora >=70%, Supernova 40-69%, Nova <40%) with pulsating Memory Pulse rings marking items due today.",
+                    contentHtml: `
+                        <div class="rem-universe-canvas">
+                            <div class="rem-canvas-header">
+                                <div class="rem-logo"><span class="rem-star-icon">✦</span> RECALL <span class="rem-tag">3D Universe</span></div>
+                                <div class="rem-stats-pill">
+                                    <span>🌌 142 Concepts</span>
+                                    <span>🧠 89% Retention</span>
+                                    <span>⚡ 12 Due Today</span>
+                                </div>
+                            </div>
+                            <div class="rem-starfield-viewport">
+                                <!-- Galaxy Nebula 1: Distributed Systems -->
+                                <div class="rem-nebula nebula-cyan" style="top:25%; left:30%;">
+                                    <span class="rem-nebula-label">Distributed Systems</span>
+                                </div>
+                                <!-- Galaxy Nebula 2: Memory Science -->
+                                <div class="rem-nebula nebula-purple" style="top:55%; left:65%;">
+                                    <span class="rem-nebula-label">Cognitive Science</span>
+                                </div>
+
+                                <!-- Star Nodes -->
+                                <div class="rem-star-node aurora-star pulse-ring" style="top:32%; left:28%; width:22px; height:22px;">
+                                    <div class="rem-star-core"></div>
+                                    <div class="rem-star-tooltip">
+                                        <div class="rem-tt-title">WebSocket Handshake</div>
+                                        <div class="rem-tt-score">Health: 95% (Aurora)</div>
+                                        <div class="rem-tt-meta">Prerequisite for: Event Loop</div>
+                                    </div>
+                                </div>
+
+                                <div class="rem-star-node supernova-star pulse-ring" style="top:40%; left:42%; width:18px; height:18px;">
+                                    <div class="rem-star-core"></div>
+                                    <div class="rem-star-tooltip">
+                                        <div class="rem-tt-title">TCP Backpressure</div>
+                                        <div class="rem-tt-score">Health: 58% (Supernova - Due Today)</div>
+                                    </div>
+                                </div>
+
+                                <div class="rem-star-node nova-star" style="top:20%; left:50%; width:14px; height:14px;">
+                                    <div class="rem-star-core"></div>
+                                    <div class="rem-star-tooltip">
+                                        <div class="rem-tt-title">Frame Masking</div>
+                                        <div class="rem-tt-score">Health: 32% (Nova - Decaying)</div>
+                                    </div>
+                                </div>
+
+                                <div class="rem-star-node aurora-star" style="top:60%; left:60%; width:26px; height:26px;">
+                                    <div class="rem-star-core"></div>
+                                    <div class="rem-star-tooltip">
+                                        <div class="rem-tt-title">FSRS Algorithm</div>
+                                        <div class="rem-tt-score">Health: 91% (Aurora)</div>
+                                    </div>
+                                </div>
+
+                                <div class="rem-star-node supernova-star" style="top:68%; left:75%; width:16px; height:16px;">
+                                    <div class="rem-star-core"></div>
+                                    <div class="rem-star-tooltip">
+                                        <div class="rem-tt-title">Ebbinghaus Curve</div>
+                                        <div class="rem-tt-score">Health: 64% (Supernova)</div>
+                                    </div>
+                                </div>
+
+                                <!-- Connecting Constellation Lines -->
+                                <svg class="rem-constellation-svg">
+                                    <line x1="28%" y1="32%" x2="42%" y2="40%" stroke="rgba(0, 217, 196, 0.4)" stroke-width="1.5" stroke-dasharray="3,3" />
+                                    <line x1="42%" y1="40%" x2="50%" y2="20%" stroke="rgba(245, 166, 35, 0.4)" stroke-width="1.5" />
+                                    <line x1="60%" y1="60%" x2="75%" y2="68%" stroke="rgba(0, 217, 196, 0.4)" stroke-width="1.5" />
+                                </svg>
+                            </div>
+
+                            <div class="rem-legend-bar">
+                                <span class="rem-leg-item"><span class="rem-dot aurora"></span> Aurora (≥70% Healthy)</span>
+                                <span class="rem-leg-item"><span class="rem-dot supernova"></span> Supernova (40-69% At Risk)</span>
+                                <span class="rem-leg-item"><span class="rem-dot nova"></span> Nova (&lt;40% Decaying)</span>
+                                <span class="rem-leg-item"><span class="rem-dot pulse"></span> Memory Pulse (Due Today)</span>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    title: "2. AI Document Ingestion & Concept Extraction",
+                    url: "recall.app/documents/upload",
+                    description: "Upload PDFs, web articles, or Markdown notes. The AI worker extracts atomic concepts, generates 1536-dim pgvector embeddings, and automatically connects prerequisite relationships.",
+                    contentHtml: `
+                        <div class="rem-ingest-container">
+                            <div class="rem-upload-box">
+                                <div class="rem-up-icon">📄</div>
+                                <div class="rem-up-title">Distributed_Systems_Paper.pdf</div>
+                                <div class="rem-up-status">Processing complete • 18 Atomic Concepts Extracted</div>
+                            </div>
+                            <div class="rem-progress-section">
+                                <div class="rem-pr-label"><span>Vector Embedding Pipeline (pgvector 1536-dim)</span><span>100%</span></div>
+                                <div class="rem-pr-bar"><div class="rem-pr-fill" style="width:100%;"></div></div>
+                            </div>
+                            <div class="rem-concepts-extracted">
+                                <div class="rem-concept-card">
+                                    <div class="rem-cc-header">
+                                        <span class="rem-cc-name">Raft Consensus Algorithm</span>
+                                        <span class="rem-cc-tag">Concept</span>
+                                    </div>
+                                    <p class="rem-cc-desc">Consensus algorithm designed to be understandable. Solves replicated state machine log synchronization across nodes.</p>
+                                    <div class="rem-cc-links">
+                                        <span class="rem-link-badge">⚡ Prerequisite of: Leader Election</span>
+                                        <span class="rem-link-badge">🔗 Analogous to: Paxos Protocol</span>
+                                    </div>
+                                </div>
+                                <div class="rem-concept-card">
+                                    <div class="rem-cc-header">
+                                        <span class="rem-cc-name">Leader Election Term</span>
+                                        <span class="rem-cc-tag">Concept</span>
+                                    </div>
+                                    <p class="rem-cc-desc">Monotonically increasing counter identifying logical time periods in Raft cluster configuration.</p>
+                                    <div class="rem-cc-links">
+                                        <span class="rem-link-badge">⚡ Extends: Heartbeat Timeout</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    title: "3. Daily Spaced Repetition (Memory Pulse Review)",
+                    url: "recall.app/review/daily",
+                    description: "Target decaying concepts using FSRS & SM-2 cognitive algorithms. Answering correctly triggers a light crystallization burst that restores the star's glowing Aurora state.",
+                    contentHtml: `
+                        <div class="rem-review-wrapper">
+                            <div class="rem-card-glow-wrap">
+                                <div class="rem-review-card">
+                                    <div class="rem-rc-header">
+                                        <span class="rem-rc-topic">Distributed Systems / Raft</span>
+                                        <span class="rem-rc-due">Memory Pulse Ring Active ⚡</span>
+                                    </div>
+                                    <div class="rem-rc-question">
+                                        What happens in Raft consensus when a Candidate receives votes from a majority of cluster nodes?
+                                    </div>
+                                    <div class="rem-rc-answer-revealed">
+                                        <strong>Answer:</strong> The candidate transitions to <strong>Leader</strong> status and immediately sends Heartbeat RPCs to all other nodes to establish authority and prevent new elections.
+                                    </div>
+                                    <div class="rem-fsrs-rating-bar">
+                                        <button class="rem-rate-btn again">Again <span class="rem-sub">&lt;10m</span></button>
+                                        <button class="rem-rate-btn hard">Hard <span class="rem-sub">1d</span></button>
+                                        <button class="rem-rate-btn good active">Good <span class="rem-sub">4d</span></button>
+                                        <button class="rem-rate-btn easy">Easy <span class="rem-sub">7d</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rem-crystallization-toast">
+                                ✦ Light Crystallization Burst! Star restored to <strong>Aurora (#00D9C4)</strong> status (+25 Stability).
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    title: "4. 3-Day Periodic Comprehensive Test (Deep Assessment Engine)",
+                    url: "recall.app/assessments/3-day-deep",
+                    description: "Every 3 days, background AI workers generate multi-format synthesis tests (Recall, Short Answer, Applied Scenarios) to evaluate holistic understanding across connected concepts.",
+                    contentHtml: `
+                        <div class="rem-test-container">
+                            <div class="rem-test-header">
+                                <div>
+                                    <div class="rem-th-title">3-Day Deep Assessment Test — Distributed Systems</div>
+                                    <div class="rem-th-sub">Topic Health Evaluation • Generated 2h ago</div>
+                                </div>
+                                <div class="rem-score-badge">
+                                    <span class="rem-sb-num">94%</span>
+                                    <span class="rem-sb-lbl">High Mastery</span>
+                                </div>
+                            </div>
+                            <div class="rem-test-qbox">
+                                <div class="rem-q-type">Applied Scenario Question (AI Evaluated)</div>
+                                <div class="rem-q-text">Scenario: A network partition divides a 5-node Raft cluster into 2 nodes (Group A) and 3 nodes (Group B). Which group can continue committing log entries, and why?</div>
+                                <div class="rem-user-ans">
+                                    "Group B (3 nodes) can continue committing entries because 3 is a majority quorum out of 5 (majority = 3). Group A (2 nodes) cannot reach quorum so candidates cannot win elections."
+                                </div>
+                                <div class="rem-ai-eval-feedback">
+                                    <strong>🤖 AI Evaluator Feedback (100/100):</strong> Excellent response! Correctly identified quorum requirements (majority of N/2 + 1 = 3) and explained why split-brain data corruption is prevented in Group A.
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            ],
+            hotspots: [
+                { x: 25, y: 27, title: "pgvector Semantic Graph", desc: "1536-dimensional vector embeddings stored in PostgreSQL via pgvector for topic clustering, concept deduplication, and topological relationship mapping." },
+                { x: 75, y: 27, title: "React Three Fiber 3D Canvas", desc: "WebGL starfield graph with dynamic star size (centrality degree), glow brightness (retention score), and custom memory decay shader pipeline." },
+                { x: 25, y: 73, title: "FSRS / SM-2 Memory Scheduler", desc: "SuperMemo-2 + FSRS cognitive scheduling algorithms calculate optimal review intervals based on stability & difficulty parameters." },
+                { x: 75, y: 73, title: "3-Day Deep Assessment Engine", desc: "Background Redis BullMQ workers generate multi-format synthesis tests every 3 days and run LLM grading to update topic aggregate health." }
+            ]
+        },
+        systemDesign: {
+            description: "Full-stack TypeScript monorepo architecture with Next.js 15 App Router frontend, NestJS + Fastify REST/WS backend API, PostgreSQL + pgvector storage, Redis BullMQ queues, and AI Document/Assessment workers.",
+            nodes: [
+                { id: "next_frontend", label: "Next.js 15 App Router", type: "client", x: 50, y: 150, info: "React 19, Tailwind CSS, React Three Fiber 3D Canvas, Zustand state." },
+                { id: "nestjs_api", label: "NestJS + Fastify API", type: "gateway", x: 240, y: 150, info: "REST controllers, WebSocket gateway, Prisma ORM data layer." },
+                { id: "postgres_db", label: "PostgreSQL + pgvector", type: "database", x: 440, y: 50, info: "Schema storage for Users, Concepts, MemoryScores, and 1536-dim vector embeddings." },
+                { id: "redis_queue", label: "Redis & BullMQ", type: "cache", x: 440, y: 250, info: "Queues for document processing, AI concept extraction, and session caching." },
+                { id: "ai_workers", label: "AI Pipeline Workers", type: "service", x: 630, y: 150, info: "LLM worker services for document extraction, graph building, and 3-Day test grading." }
+            ],
+            edges: [
+                { from: "next_frontend", to: "nestjs_api", label: "HTTP / WebSockets", animated: true },
+                { from: "nestjs_api", to: "postgres_db", label: "Prisma Queries", animated: true },
+                { from: "nestjs_api", to: "redis_queue", label: "Enqueue Jobs", animated: true },
+                { from: "redis_queue", to: "ai_workers", label: "Process Pipeline", animated: true },
+                { from: "ai_workers", to: "postgres_db", label: "Save Embeddings & Tests", animated: false }
+            ]
+        }
     }
 };
+
+
