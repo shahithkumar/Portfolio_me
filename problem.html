@@ -318,11 +318,8 @@
                     navCapsule.style.opacity = "0";
                     return;
                 }
-                const linkRect = targetLink.getBoundingClientRect();
-                const containerRect = navContainer.getBoundingClientRect();
-                
-                navCapsule.style.width = `${linkRect.width}px`;
-                navCapsule.style.left = `${linkRect.left - containerRect.left}px`;
+                navCapsule.style.width = `${targetLink.offsetWidth}px`;
+                navCapsule.style.left = `${targetLink.offsetLeft}px`;
                 navCapsule.style.opacity = "1";
             }
 
