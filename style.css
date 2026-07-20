@@ -3,56 +3,54 @@
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Theme-independent colors (Light Theme defaults) */
+    /* Theme-independent colors (Light Theme defaults) - flattened for minimal UI */
     --primary: #0f0f11;
-    --primary-hover: #1f1f23;
+    --primary-hover: #111117;
     --primary-foreground: #ffffff;
-    --accent: #f59e0b; /* Golden Yellow */
-    --accent-secondary: #f97316; /* Warm orange */
-    --accent-glow: rgba(245, 158, 11, 0.18);
-    --accent-glow-strong: rgba(245, 158, 11, 0.35);
+    --accent: #f59e0b; /* Golden Yellow (kept subtle) */
+    --accent-secondary: #f97316;
+    --accent-glow: rgba(0,0,0,0); /* reduce glow */
+    --accent-glow-strong: rgba(0,0,0,0);
 
-    --bg-page: #f0ede8; /* Warm off-white */
-    --bg-mesh: radial-gradient(ellipse at 10% 30%, rgba(245,158,11,0.06) 0%, transparent 55%),
-               radial-gradient(ellipse at 90% 70%, rgba(249,115,22,0.05) 0%, transparent 55%),
-               #f0ede8;
+    --bg-page: #f7f7f8; /* neutral light */
+    --bg-mesh: var(--bg-page); /* remove textured mesh */
     --bg-card: #ffffff;
-    --bg-card-elevated: #fafaf9;
-    --border-card: rgba(0, 0, 0, 0.06);
-    --border-card-hover: rgba(245, 158, 11, 0.4);
+    --bg-card-elevated: #ffffff;
+    --border-card: rgba(15, 15, 17, 0.06);
+    --border-card-hover: rgba(15, 15, 17, 0.09);
     
-    --text-main: #111110;
+    --text-main: #0f1720;
     --text-muted: #6b6b78;
     
-    --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px -4px rgba(0,0,0,0.06);
-    --card-shadow-hover: 0 8px 40px -8px rgba(245,158,11,0.15), 0 2px 8px rgba(0,0,0,0.06);
-    --card-shadow-lg: 0 20px 60px -15px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
+    --card-shadow: 0 1px 6px rgba(11, 12, 14, 0.06); /* subtle */
+    --card-shadow-hover: 0 4px 12px rgba(11, 12, 14, 0.08);
+    --card-shadow-lg: 0 10px 30px rgba(11, 12, 14, 0.08);
     
-    /* Box Color Tokens for Cards (Light) */
-    --box-gold-bg: #fffbeb;
-    --box-gold-fg: #d97706;
+    /* Box Color Tokens for Cards (Light) - preserved but less saturated */
+    --box-gold-bg: #fff9f0;
+    --box-gold-fg: #c77a06;
     
-    --box-purple-bg: #faf5ff;
+    --box-purple-bg: #fbf8ff;
     --box-purple-fg: #7c3aed;
     
-    --box-green-bg: #f0fdf4;
+    --box-green-bg: #f7fdf7;
     --box-green-fg: #16a34a;
     
-    --box-pink-bg: #fff1f2;
+    --box-pink-bg: #fff7f8;
     --box-pink-fg: #db2777;
     
-    --box-blue-bg: #eff6ff;
+    --box-blue-bg: #f3f8ff;
     --box-blue-fg: #2563eb;
     
-    --box-orange-bg: #fff7ed;
+    --box-orange-bg: #fff9f3;
     --box-orange-fg: #ea580c;
 
-    --box-red-bg: #fef2f2;
+    --box-red-bg: #fff6f6;
     --box-red-fg: #ef4444;
 
-    --backdrop-bg: rgba(240, 237, 232, 0.85);
+    --backdrop-bg: rgba(247, 247, 248, 0.9);
     --modal-bg: #ffffff;
-    --header-bg: rgba(240, 237, 232, 0.72);
+    --header-bg: rgba(255,255,255,0.9);
 }
 
 [data-theme="dark"] {

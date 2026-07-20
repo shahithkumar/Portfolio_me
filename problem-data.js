@@ -1236,7 +1236,7 @@ Most productivity tools fight this by locking you out. But people don't want to 
         tagline: "AI-powered Memory Operating System. Turn knowledge into a living 3D universe with spaced repetition.",
         creator: "Shahith Kumar",
         year: "2026",
-        link: "https://github.com/shahithkumar/RECALL",
+        link: "https://github.com/shahithkumar/Recall",
         ctaText: "Get GitHub Link",
         theme: "aurora",
         themeColors: {
