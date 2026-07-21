@@ -28,7 +28,6 @@
 .premium-card,
 .problem-card,
 .browser-mockup-frame,
-.video-container,
 .annotation-desc-card,
 .modal-content {
     background: var(--bg-card) !important;
@@ -355,15 +354,20 @@ body.problem-page {
 }
 
 .p-section-badge {
-    display: inline-block;
-    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
     font-weight: 700;
-    color: var(--theme-primary);
-    background-color: var(--theme-bg);
-    padding: 0.35rem 0.85rem;
+    color: var(--theme-primary, #00D9C4);
+    background-color: rgba(var(--theme-primary-rgb, 0, 217, 196), 0.09);
+    border: 1px solid rgba(var(--theme-primary-rgb, 0, 217, 196), 0.22);
+    padding: 0.32rem 0.85rem;
     border-radius: 9999px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
     margin-bottom: 0.75rem;
+    box-shadow: 0 2px 8px rgba(var(--theme-primary-rgb, 0, 217, 196), 0.05);
+    transition: all 0.25s ease;
 }
 
 .p-section-title {
@@ -1241,14 +1245,14 @@ body.problem-page {
 
 .video-container {
     width: 100%;
-    min-height: 600px;
-    background-color: #000;
-    border-radius: 24px;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000000 !important;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 16 / 9;
-    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.24);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .video-thumbnail {
@@ -1257,12 +1261,13 @@ body.problem-page {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #111118;
+    background-color: #080B14;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
@@ -1285,7 +1290,8 @@ body.problem-page {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain !important;
+    background-color: #000000;
 }
 
 .video-play-btn {
@@ -2164,7 +2170,7 @@ body.problem-page {
         gap: 3rem;
     }
     .video-container {
-        min-height: 520px;
+        width: 100%;
     }
     .sys-canvas-wrapper {
         grid-template-columns: 1fr;
@@ -2186,7 +2192,7 @@ body.problem-page {
         font-size: 2.5rem;
     }
     .video-container {
-        min-height: 320px;
+        width: 100%;
     }
     .v-nav {
         display: none; /* Hide middle menu items to avoid overflow */

@@ -293,8 +293,19 @@
             document.documentElement.style.setProperty('--theme-bg', themeBgValue);
             document.documentElement.style.setProperty('--theme-secondary', data.themeColors?.secondary || themePrimaryValue);
             
-            // Map RGB equivalent for shadows
+            // Helper to parse hex colors to RGB string
+            function hexToRgb(hex) {
+                if (!hex || typeof hex !== 'string' || !hex.startsWith('#')) return null;
+                let c = hex.substring(1);
+                if (c.length === 3) c = c.split('').map(x => x + x).join('');
+                if (c.length !== 6) return null;
+                const num = parseInt(c, 16);
+                return `${(num >> 16) & 255}, ${(num >> 8) & 255}, ${num & 255}`;
+            }
+
+            // Map RGB equivalent for shadows & badges
             const rgbValues = {
+                aurora: "0, 217, 196",
                 gold: "217, 119, 6",
                 purple: "124, 58, 237",
                 green: "22, 163, 74",
@@ -303,7 +314,8 @@
                 orange: "234, 88, 12",
                 red: "239, 68, 68"
             };
-            document.documentElement.style.setProperty('--theme-primary-rgb', rgbValues[data.theme] || "15, 15, 17");
+            const computedRgb = hexToRgb(themePrimaryValue) || rgbValues[data.theme] || "0, 217, 196";
+            document.documentElement.style.setProperty('--theme-primary-rgb', computedRgb);
 
             // Brand header breadcrumb
             document.getElementById("header-project-name").textContent = data.productName;
